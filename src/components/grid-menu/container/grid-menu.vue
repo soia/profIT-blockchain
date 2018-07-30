@@ -1,17 +1,47 @@
 <template>
-<section class="main section home-technologies">
-    <GridMenu/>
+    <section class="grid-menu">
+    <GridMenuItem :key="item.heading" :icon="item.icon" :title="item.heading" v-for="item in array"/>
 </section>
 </template>
 
-
 <script>
-import GridMenu from "@/components/grid-menu/container/grid-menu";
+import GridMenuItem from "@/components/grid-menu/item/grid-menu__item";
 
 export default {
-  name: "Technologies",
+  name: "GridMenu",
   components: {
-    GridMenu
+    GridMenuItem
+  },
+  data() {
+    return {
+      array: [
+        {
+          heading: "Blockchain"
+          //   icon: '<div class="icon">asd</div>'
+        },
+        {
+          heading: "Consensus"
+        },
+        {
+          heading: "Сryptographic network protocols "
+        },
+        {
+          heading: "Dapp Browsers"
+        },
+        {
+          heading: "Data Feeds"
+        },
+        {
+          heading: "Decentralized applications"
+        },
+        {
+          heading: "Messaging"
+        },
+        {
+          heading: "Storage"
+        }
+      ]
+    };
   }
 };
 </script>
@@ -39,7 +69,7 @@ export default {
     left: -10vw;
   }
   &::after {
-    top: 50%;
+    top: 20vw;
   }
   &::before {
     top: -1px;
@@ -48,10 +78,8 @@ export default {
     position: relative;
     display: flex;
     align-items: center;
-    max-width: 20vw;
-    width: 100%;
-    max-height: 20vw;
-    height: -webkit-fill-available;
+    width: 20vw;
+    height: 20vw;
     position: relative;
     flex-direction: column;
     transition: all 0.4s ease-in-out;

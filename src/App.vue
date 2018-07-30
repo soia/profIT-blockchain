@@ -2,7 +2,7 @@
 <div id="app">
     <MainNav/>
     <router-view/>
-    <Form/>
+    <Form />
 </div>
 </template>
 
