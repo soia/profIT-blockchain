@@ -4,7 +4,7 @@
       <div class="grid">
         <div class="grid__col header__item logo">
           <router-link to="/" class="nav__a">
-            <img src="../assets/img/header/logo.svg" alt="" class="logo__img">
+            <img src="../../assets/img/header/logo.svg" alt="" class="logo__img">
           </router-link>
         </div> 
         <div class="grid__col header__item header__item_menu">
@@ -35,7 +35,7 @@
     <div class="menu__line menu__line_2">
       <div class="menu__header logo">
         <router-link to="/" class="nav__a">
-          <img src="../assets/img/header/logo_black.svg" alt="" class="logo__img">
+          <img src="../../assets/img/header/logo_black.svg" alt="" class="logo__img">
         </router-link>
       </div>
       <router-link to='/solutions' class="menu__link">
@@ -44,14 +44,14 @@
             Наши<br>
             решения
           </h3>
-          <img class="menu__img" src='../assets/img/menu/chevron_white.svg'>
+          <img class="menu__img" src='../../assets/img/menu/chevron_white.svg'>
         </div>
 
         <h3 class="menu__desc">
           Наши<br>
           решения
         </h3>
-        <img class="menu__img" src='../assets/img/menu/chevron.svg'>
+        <img class="menu__img" src='../../assets/img/menu/chevron.svg'>
       </router-link>
       <router-link to='/problems' class="menu__link">
         <div class="menu-hover">
@@ -61,7 +61,7 @@
             Вас могут<br>
             ожидать?
           </h3>
-          <img class="menu__img" src='../assets/img/menu/chevron_white.svg'>
+          <img class="menu__img" src='../../assets/img/menu/chevron_white.svg'>
         </div>
         <h3 class="menu__desc">
           Какие<br>
@@ -69,7 +69,7 @@
           Вас могут<br>
           ожидать?
         </h3>
-        <img class="menu__img" src='../assets/img/menu/chevron.svg'>
+        <img class="menu__img" src='../../assets/img/menu/chevron.svg'>
       </router-link>
     </div>
 
@@ -89,24 +89,24 @@
           <h3 class="menu__desc">
             Технологии
           </h3>
-          <img class="menu__img" src='../assets/img/menu/chevron_white.svg'>
+          <img class="menu__img" src='../../assets/img/menu/chevron_white.svg'>
         </div>
         <h3 class="menu__desc">
           Технологии
         </h3>
-        <img class="menu__img" src='../assets/img/menu/chevron.svg'>
+        <img class="menu__img" src='../../assets/img/menu/chevron.svg'>
       </router-link>
       <router-link to='/offers' class="menu__link menu__link_offers">
         <div class="menu-hover">
           <h3 class="menu__desc">
             Что мы<br>предлaгаем
           </h3>
-          <img class="menu__img" src='../assets/img/menu/chevron_white.svg'>
+          <img class="menu__img" src='../../assets/img/menu/chevron_white.svg'>
         </div>
         <h3 class="menu__desc">
           Что мы<br>предлaгаем
         </h3>
-        <img class="menu__img" src='../assets/img/menu/chevron.svg'>
+        <img class="menu__img" src='../../assets/img/menu/chevron.svg'>
       </router-link>
     </div>
 
@@ -118,12 +118,12 @@
           <h3 class="menu__desc">
             Наши<br>проекты
           </h3>
-          <img class="menu__img" src='../assets/img/menu/chevron_white.svg'>
+          <img class="menu__img" src='../../assets/img/menu/chevron_white.svg'>
         </div>
         <h3 class="menu__desc">
           Наши<br>проекты
         </h3>
-        <img class="menu__img" src='../assets/img/menu/chevron.svg'>
+        <img class="menu__img" src='../../assets/img/menu/chevron.svg'>
       </router-link>   
     </div>
 
@@ -140,12 +140,12 @@
           <h3 class="menu__desc">
             Наши<br>партнеры
           </h3>
-          <img class="menu__img" src='../assets/img/menu/chevron_white.svg'>
+          <img class="menu__img" src='../../assets/img/menu/chevron_white.svg'>
         </div>
         <h3 class="menu__desc">
           Наши<br>партнеры
         </h3>
-        <img class="menu__img" src='../assets/img/menu/chevron.svg'>
+        <img class="menu__img" src='../../assets/img/menu/chevron.svg'>
       </router-link>       
     </div>
     <div class="menu__line menu__line_6">      
@@ -161,8 +161,8 @@
 
 <script>
   export default {
-    name: 'Homepage',
-    template: '<Homepage/>',
+    name: 'MainNav',
+    template: '<MainNav/>',
     methods: {
       switchLocaleToRu: function(){
         this.$i18n.locale = 'ru'
