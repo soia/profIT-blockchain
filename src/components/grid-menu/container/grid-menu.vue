@@ -1,6 +1,6 @@
 <template>
     <section class="grid-menu">
-    <GridMenuItem :key="item.heading" :icon="item.icon" :title="item.heading" v-for="item in array"/>
+    <GridMenuItem :key="item.heading" :id="item.id" :icon="item.icon" :title="item.heading" :desc="item.desc" v-for="item in array"/>
 </section>
 </template>
 
@@ -16,29 +16,53 @@ export default {
     return {
       array: [
         {
-          heading: "Blockchain"
+          id: 1,
+          heading: "Blockchain",
           //   icon: '<div class="icon">asd</div>'
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
         },
         {
-          heading: "Consensus"
+          id: 2,
+          heading: "Consensus",
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
         },
         {
-          heading: "Сryptographic network protocols "
+          id: 3,
+          heading: "Сryptographic network protocols ",
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
         },
         {
-          heading: "Dapp Browsers"
+          id: 4,
+          heading: "Dapp Browsers",
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
         },
         {
-          heading: "Data Feeds"
+          id: 5,
+          heading: "Data Feeds",
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
         },
         {
-          heading: "Decentralized applications"
+          id: 6,
+          heading: "Decentralized applications",
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
         },
         {
-          heading: "Messaging"
+          id: 7,
+          heading: "Messaging",
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
         },
         {
-          heading: "Storage"
+          id: 8,
+          heading: "Storage",
+          desc:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
         }
       ]
     };
@@ -74,51 +98,5 @@ export default {
   &::before {
     top: -1px;
   }
-  &__item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 20vw;
-    height: 20vw;
-    position: relative;
-    flex-direction: column;
-    transition: all 0.4s ease-in-out;
-    overflow: hidden;
-    cursor: pointer;
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: hsl(228, 87%, 53%);
-      transform: translate3d(-101%, 0, 0);
-      transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
-      z-index: -1;
-    }
-    &:hover {
-      &::before {
-        transform: translate3d(0, 0, 0);
-      }
-    }
-  }
-  &__icon {
-  }
-  &__heading {
-    color: #fff;
-  }
-}
-
-.circle-arrow {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 0.5em;
-  right: 0.5em;
-  width: 2.25em;
-  height: 2.25em;
-  transition: 0.4s ease-in-out;
 }
 </style>

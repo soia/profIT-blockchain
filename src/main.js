@@ -5,6 +5,7 @@ import App from "./App";
 import MainNav from "./components/navigations/main-nav";
 import router from "./router";
 import VueI18n from "vue-i18n";
+
 Vue.use(VueI18n);
 
 Vue.config.productionTip = false;

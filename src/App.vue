@@ -10,7 +10,6 @@
 import Router from "vue-router";
 import MainNav from "@/components/navigations/main-nav";
 import Form from "@/components/forms/form";
-
 export default {
   components: {
     MainNav,
@@ -225,7 +224,7 @@ body {
 .menu__line {
   position: absolute;
   transform-origin: center top;
-  z-index: 15;
+  z-index: 99;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -700,6 +699,24 @@ body {
   line-height: 1.1578;
 }
 
+.circle-arrow {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0.5em;
+  right: 0.5em;
+  width: 2.25em;
+  height: 2.25em;
+  transition: 0.4s ease-in-out;
+  z-index: 4;
+}
+.f-layer {
+  z-index: 99 !important;
+}
+.hidden {
+  display: none;
+}
 @media screen and (max-width: 1920px) {
   body {
     font-size: 18px;

@@ -10,7 +10,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "animejs": "^2.2.0",
     "normalize.css": "^8.0.0",
+    "typed.js": "^2.0.8",
     "vue": "^2.5.2",
     "vue-i18n": "^7.6.0",
     "vue-router": "^3.0.1"
