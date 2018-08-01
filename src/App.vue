@@ -3,7 +3,7 @@
     <SvgCollection/>
     <MainNav/>
     <router-view/>
-    <Form />
+    <Form v-if="isFormVisible()"/>
 </div>
 </template>
 
@@ -18,6 +18,20 @@ export default {
     Router,
     Form,
     SvgCollection
+  },
+  methods: {
+    isFormVisible: function() {
+      if (this.$route.fullPath == "/" || this.$route.fullPath == "/partners") {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  },
+  data() {
+    return {
+      currentRoute: window.location.pathname
+    };
   }
 };
 </script>

@@ -25,6 +25,14 @@ export default {
   props: ["title", "icon", "desc"],
   name: "GridMenuItem",
   methods: {
+    // mouseover: function() {
+    //   const borderLeft = anime({
+    //     targets: this.$el.querySelector(".grid-menu__content"),
+    //     translateX: 250,
+    //     easing: "easeInOutQuad",
+    //     trasition: "0"
+    //   });
+    // },
     expand: function() {
       let $this = this,
         type = $this.$el.querySelector(".grid-menu__text"),
@@ -42,10 +50,12 @@ export default {
         }
       });
 
+      let className = "grid-menu__item_expanded";
+
       if (this.expanded) {
+        // close
         this.expanded = !this.expanded;
         // calls
-
         this.typed.start();
 
         setTimeout(() => {
@@ -55,32 +65,31 @@ export default {
         // functions
 
         function classInit() {
-          $this.$el.classList.remove("grid-menu__item_expanded");
+          $this.$el.classList.remove(className);
           setTimeout(() => {
             $this.$el.classList.remove("f-layer");
           }, 700);
-          $this.$el.classList.remove("grid-menu__item_expanded");
         }
       } else {
+        //open
         this.expanded = !this.expanded;
 
         let siblings = $this.$el.parentElement.childNodes;
 
         // calls
 
-        removeClassFromSiblings();
-        classInit();
+        removeClassFromSiblings(className);
+        classInit(className);
 
         this.typed.reset();
-        this.typed.start();
 
         // functions
 
-        function removeClassFromSiblings() {
+        function removeClassFromSiblings(className) {
           for (const key in siblings) {
             if (siblings.hasOwnProperty(key)) {
               const element = siblings[key];
-              element.classList.remove("grid-menu__item_expanded");
+              element.classList.remove(className);
               $this.typed.start();
               if ($this.$el !== element) {
                 setTimeout(() => {
@@ -91,8 +100,8 @@ export default {
           }
         }
 
-        function classInit() {
-          $this.$el.classList.add("grid-menu__item_expanded");
+        function classInit(className) {
+          $this.$el.classList.add(className);
           $this.$el.classList.add("f-layer");
         }
       }
@@ -120,13 +129,12 @@ export default {
   transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
   z-index: 1;
 }
-
 .grid-menu {
   &__text {
     position: absolute;
     top: 12vw;
-    left: 3.8vw;
-    width: 32vw;
+    left: 1.8vw;
+    width: 81%;
     opacity: 0;
     transition: all 0.4s;
     transform: translate3d(0, 0, 0);
@@ -148,7 +156,40 @@ export default {
       }
     }
     &_expanded {
-      z-index: 14;
+      z-index: 999 !important;
+      &#block2 {
+        .grid-menu__content {
+          max-width: 60vw !important;
+        }
+      }
+      &#block4 {
+        .grid-menu__content {
+          right: 0;
+          left: initial;
+        }
+        .grid-menu__heading {
+          transform: translate3d(-1.75vw, 0, 0);
+        }
+      }
+      &#block5,
+      &#block6,
+      &#block7,
+      &#block8 {
+        .grid-menu__heading {
+          transform: translate3d(1vw, 10vw, 0);
+        }
+        .grid-menu__content {
+          top: initial;
+          bottom: 0;
+        }
+      }
+
+      &#block8 {
+        .grid-menu__content {
+          right: 0;
+          left: initial;
+        }
+      }
       .grid-menu__text {
         opacity: 1;
         transition-delay: 0.4s;
@@ -175,7 +216,7 @@ export default {
   }
   &__heading {
     color: #fff;
-    margin: 3.8vw 0 0 3.8vw;
+    margin: 3.8vw 0 0 1.8vw;
     z-index: 4;
     position: relative;
     transition: all.4s;

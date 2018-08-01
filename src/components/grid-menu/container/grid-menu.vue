@@ -24,6 +24,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .grid-menu {
+  z-index: 1;
   position: absolute;
   bottom: 0;
   font-family: "CourierNew", sans-serif;

@@ -18,36 +18,36 @@ export default {
     return {
       array: [
         {
-          id: 1,
+          id: "block1",
           icon:
             '<svg pointer-events="none" height="80" width="80"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logoApple"></use></svg>'
         },
         {
-          id: 2
+          id: "block2"
         },
         {
-          id: 3,
+          id: "block3",
           icon:
             '<svg pointer-events="none" height="80" width="80"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logoAmazon"></use></svg>'
         },
         {
-          id: 4
+          id: "block4"
         },
         {
-          id: 5
+          id: "block5"
         },
         {
-          id: 6
+          id: "block6"
         },
         {
-          id: 7,
+          id: "block7",
           icon:
-            '<img src="../../assets/img/content/Cool_TV_logo_2004.png" alt="">'
+            '<svg pointer-events="none" height="80" width="80"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logoApple"></use></svg>'
         },
         {
-          id: 8,
+          id: "block8",
           icon:
-            '<img src="../../assets/img/content/Cool_TV_logo_2004.png" alt="">'
+            '<svg pointer-events="none" height="80" width="80"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logoAmazon"></use></svg>'
         }
       ]
     };
@@ -56,7 +56,7 @@ export default {
 </script>
 
 <style  lang="scss">
-.grid-menu {
+.partners .grid-menu {
   &__item {
     align-items: center !important;
     justify-content: center;
