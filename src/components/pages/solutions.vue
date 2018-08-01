@@ -1,5 +1,5 @@
 <template>
-	<section class="projects section">
+	<section class="solutions section">
          <GridMenu :data='array'/>
   </section>
 </template>

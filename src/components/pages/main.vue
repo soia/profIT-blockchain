@@ -1,7 +1,11 @@
 <template>
 	<section class="main section">
       <div class="main__wrap">
-        <h1 class="main__h1"></Разработка бизнес ~ решений<br>на базе blockchain\></h1>
+        <h1 class="main__h1"> 
+          
+          &#60;/Разработка бизнес ~ решений<br>на базе blockchain\&#62;
+
+          </h1>
         <h5 class="main__desc">Заполните чек-лист и мы сможем<br>проконсультировать Вас по Вашему проекту</h5>
       </div>      
     </section>
