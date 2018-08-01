@@ -1,5 +1,6 @@
 <template>
 <div id="app">
+    <SvgCollection/>
     <MainNav/>
     <router-view/>
     <Form />
@@ -10,11 +11,13 @@
 import Router from "vue-router";
 import MainNav from "@/components/navigations/main-nav";
 import Form from "@/components/forms/form";
+import SvgCollection from "@/components/icons/svg-collection";
 export default {
   components: {
     MainNav,
     Router,
-    Form
+    Form,
+    SvgCollection
   }
 };
 </script>
@@ -508,7 +511,7 @@ body {
   width: 3px;
   height: 0;
   background-color: #1d46ef;
-  transition: 0.4s ease-in-out;
+  /* transition: 0.4s ease-in-out; */
 }
 
 .menu__link_offers:before {
@@ -569,13 +572,12 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 10;
+  z-index: 0;
 }
 
 .menu__link:hover .menu-hover {
   width: calc(100% + 1px);
 }
-
 .menu-hover .menu__desc {
   color: #fff;
 }

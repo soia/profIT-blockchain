@@ -45,36 +45,36 @@ new Vue({
 
 var menuOpened = false,
   menuAnimation = true;
-$(".menu-icon").click(function() {
-  if (menuAnimation) {
-    menuAnimation = false;
-    if (!menuOpened) {
-      $("body").addClass("is-menu");
-      menuOpened = true;
-      $(".header .header__item").removeClass("is-active");
-    } else {
-      $("body").addClass("is-menu_close");
+$(".menu-icon").click(openMenu());
+$(".menu__link").click(openMenu());
 
+function openMenu() {
+  return function() {
+    if (menuAnimation) {
+      menuAnimation = false;
+      if (!menuOpened) {
+        $("body").addClass("is-menu");
+        menuOpened = true;
+        $(".header .header__item").removeClass("is-active");
+      } else {
+        $("body").addClass("is-menu_close");
+        setTimeout(function() {
+          $(".header .logo").addClass("is-active");
+        }, 470);
+        setTimeout(function() {
+          $(".header .header__item_menu").addClass("is-active");
+        }, 540);
+        setTimeout(function() {
+          $(".header .header__item_lang").addClass("is-active");
+        }, 680);
+        setTimeout(function() {
+          $("body").removeClass("is-menu_close is-menu");
+        }, 750);
+        menuOpened = false;
+      }
       setTimeout(function() {
-        $(".header .logo").addClass("is-active");
-      }, 470);
-
-      setTimeout(function() {
-        $(".header .header__item_menu").addClass("is-active");
-      }, 540);
-
-      setTimeout(function() {
-        $(".header .header__item_lang").addClass("is-active");
-      }, 680);
-
-      setTimeout(function() {
-        $("body").removeClass("is-menu_close is-menu");
+        menuAnimation = true;
       }, 750);
-
-      menuOpened = false;
     }
-    setTimeout(function() {
-      menuAnimation = true;
-    }, 750);
-  }
-});
+  };
+}

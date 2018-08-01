@@ -1,5 +1,5 @@
 <template>
-	<section class="projects section">
+	<section class="offers section">
      <div class="section__wrap">
      	What do we offer?
      </div>
@@ -12,7 +12,6 @@
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
   
 </style>
