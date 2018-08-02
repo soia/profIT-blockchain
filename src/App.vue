@@ -38,7 +38,7 @@ export default {
 
 <style src="../node_modules/normalize.css/normalize.css"></style>
 
-<style>
+<style lang="scss">
 @font-face {
   font-family: "RoadRadio";
   src: url("./assets/fonts/roadradio/RoadRadio.ttf") format("truetype");
@@ -69,6 +69,13 @@ export default {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "CourierNew";
+  src: url("./assets/fonts/courier-new/CourierNewItalicFont.ttf")
+    format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
 *,
 *:before,
 *:after {

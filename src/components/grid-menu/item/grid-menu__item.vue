@@ -24,15 +24,18 @@ import Typed from "typed.js";
 export default {
   props: ["title", "icon", "desc"],
   name: "GridMenuItem",
+  mounted: function() {
+    const itemsAppearing = anime({
+      targets: ".grid-menu__item",
+      opacity: 1,
+      duration: 300,
+      easing: "easeInCubic",
+      delay: function(el, i, l) {
+        return i * 100;
+      }
+    });
+  },
   methods: {
-    // mouseover: function() {
-    //   const borderLeft = anime({
-    //     targets: this.$el.querySelector(".grid-menu__content"),
-    //     translateX: 250,
-    //     easing: "easeInOutQuad",
-    //     trasition: "0"
-    //   });
-    // },
     expand: function() {
       let $this = this,
         type = $this.$el.querySelector(".grid-menu__text"),
@@ -141,6 +144,7 @@ export default {
     word-break: break-all;
   }
   &__item {
+    opacity: 0;
     position: relative;
     display: flex;
     align-items: flex-start;

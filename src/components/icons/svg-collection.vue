@@ -30,4 +30,11 @@ export default {
 #svg-collection {
   display: none;
 }
+
+#circleArr {
+  circle {
+    stroke-dasharray: 126;
+    stroke-dashoffset: 126;
+  }
+}
 </style>

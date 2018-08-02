@@ -18,22 +18,26 @@ export default {
         {
           id: "block1",
           heading: "Bitspulse",
-          img: "imgimg"
+          img:
+            "https://images.pexels.com/photos/4827/nature-forest-trees-fog.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         },
         {
           id: "block2",
           heading: "Articcoin",
-          img: "imgimg"
+          img:
+            "https://images.pexels.com/photos/696680/pexels-photo-696680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         },
         {
           id: "block3",
           heading: "IGF Fund",
-          img: "imgimg"
+          img:
+            "https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         },
         {
           id: "block4",
           heading: "Axis",
-          img: "imgimg"
+          img:
+            "https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         }
       ]
     };
