@@ -1,6 +1,6 @@
 <template>
     <section class="vertical-menu">
-        <VerticalMenuItem :key="item.id" :id="item.id" :img="item.img" :title="item.heading" :desc="item.desc" v-for="item in array"/>
+        <VerticalMenuItem :key="item.id" :id="item.id" :img="item.img" :title="item.heading" :desc="item.desc" :hiddenContent="item.hiddenContent" v-for="item in array"/>
     </section>
 </template>
 

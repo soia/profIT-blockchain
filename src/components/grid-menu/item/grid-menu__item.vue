@@ -1,5 +1,5 @@
 <template>
-<div class="grid-menu__item" @click="expand">
+<div class="grid-menu__item" @click="expand" >
     <div class="grid-menu__icon" v-html="this.icon">
     </div>
     <h4 class="grid-menu__heading">
@@ -25,6 +25,9 @@ export default {
   props: ["title", "icon", "desc"],
   name: "GridMenuItem",
   mounted: function() {
+    let $this = this,
+      type = $this.$el.querySelector(".grid-menu__text"),
+      text = $this.$el.querySelector(".hidden-text");
     const itemsAppearing = anime({
       targets: ".grid-menu__item",
       opacity: 1,
@@ -34,32 +37,33 @@ export default {
         return i * 100;
       }
     });
+    this.typed = new Typed(type, {
+      strings: [text.innerHTML, ""],
+      backDelay: 0,
+      showCursor: false,
+      contentType: "text",
+      onStringTyped: (arrayPos, self) => {
+        if (this.expanded) {
+          this.typed.stop();
+        }
+      }
+    });
+    this.typed.stop();
   },
   methods: {
     expand: function() {
+      this.expanded = !this.expanded;
+
       let $this = this,
         type = $this.$el.querySelector(".grid-menu__text"),
         text = $this.$el.querySelector(".hidden-text");
 
-      this.typed = new Typed(type, {
-        strings: [text.innerHTML, ""],
-        typeSpeed: 0,
-        startDelay: 0,
-        backDelay: 0,
-        smartBackspace: false,
-        showCursor: false,
-        onStringTyped: (arrayPos, self) => {
-          self.stop();
-        }
-      });
-
       let className = "grid-menu__item_expanded";
 
-      if (this.expanded) {
+      if (!this.expanded) {
         // close
-        this.expanded = !this.expanded;
         // calls
-        this.typed.start();
+        this.typed.toggle();
 
         setTimeout(() => {
           classInit();
@@ -75,15 +79,14 @@ export default {
         }
       } else {
         //open
-        this.expanded = !this.expanded;
-
         let siblings = $this.$el.parentElement.childNodes;
-
+        console.log("sd");
         // calls
 
         removeClassFromSiblings(className);
         classInit(className);
 
+        this.typed.start();
         this.typed.reset();
 
         // functions
@@ -93,7 +96,7 @@ export default {
             if (siblings.hasOwnProperty(key)) {
               const element = siblings[key];
               element.classList.remove(className);
-              $this.typed.start();
+              // $this.typed.start();
               if ($this.$el !== element) {
                 setTimeout(() => {
                   element.classList.remove("f-layer");

@@ -1,7 +1,8 @@
 <template>
-	<section class="problems section">
-         <VerticalMenu :data='array'/>
-  </section>
+<section class="problems section">
+    <VerticalMenu :data='array' />
+</section>
+
 </template>
 
 <script>
@@ -18,20 +19,20 @@ export default {
         {
           id: "block1",
           heading: "Не добросовесные команды",
-          desc: "Проблема 1",
-          img: "imgimg"
+		  desc: "Проблема 1",
+		  hiddenContent:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, veniam natus architecto iusto provident nisi aliquam asperiores molestiae est, culpa tempora aliquid rem ab voluptate expedita voluptatum. Quis, adipisci hic?"
         },
         {
           id: "block2",
           heading: "Не правильно подобраные технологии",
-          desc: "Проблема 2",
-          img: "imgimg"
+		  desc: "Проблема 2",
+		  hiddenContent:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, veniam natus architecto iusto provident nisi aliquam asperiores molestiae est, culpa tempora aliquid rem ab voluptate expedita voluptatum. Quis, adipisci hic?"
         },
         {
           id: "block3",
           heading: 'Отсутствие понятия "безопасность"',
-          desc: "Проблема 3",
-          img: "imgimg"
+		  desc: "Проблема 3",
+		  hiddenContent:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, veniam natus architecto iusto provident nisi aliquam asperiores molestiae est, culpa tempora aliquid rem ab voluptate expedita voluptatum. Quis, adipisci hic?"
         }
       ]
     };
@@ -39,6 +40,24 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style lang="scss">
+.problems {
+  .vertical-menu {
+    &__content {
+      bottom: 25vh;
+    }
+    &__hint-text {
+      transition-delay: 0ms;
+    }
+    &__heading {
+      transition-delay: 100ms;
+      margin-top: 10px;
+    }
+    &__hint {
+      position: absolute;
+      right: 0;
+      top: 1.6em;
+    }
+  }
+}
 </style>
