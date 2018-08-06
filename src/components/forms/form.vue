@@ -26,8 +26,7 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
 .form {
   z-index: 20;
   position: absolute;
@@ -37,6 +36,13 @@ export default {
   height: 3.625em;
   overflow: hidden;
   transition: 0.4s linear;
+  @media screen and (max-width: 500px) {
+    left: 10vw;
+    width: 80vw;
+    position: fixed;
+    bottom: 0;
+    height: 4.625em;
+  }
 }
 .button {
   width: 100%;
@@ -57,6 +63,11 @@ export default {
   background: #0c0c0c;
   bottom: -3.625em;
   transition: 0.2s linear 0.4s;
+  @media screen and (max-width: 500px) {
+    height: 4.625em;
+  bottom: -4.625em;
+
+  }
 }
 .form:hover .button {
   bottom: 0;
@@ -79,6 +90,9 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 500px) {
+    height: 4.625em;
+  }
 }
 .input {
   padding: 0.625em 0;
@@ -88,6 +102,9 @@ export default {
   font-weight: 700;
   border: none;
   position: relative;
+  @media screen and (max-width: 500px) {
+    font-size: 16px;
+  }
 }
 .input:focus {
   outline: none;
@@ -126,6 +143,9 @@ export default {
   transition: 0.4s linear;
   padding: 0 4.1vw 0 2.9vw;
   height: 13em;
+  @media screen and (max-width: 500px) {
+    height: 25em;
+  }
 }
 .input::-webkit-input-placeholder {
   color: #000;
@@ -141,6 +161,9 @@ export default {
 }
 .form:hover {
   height: 16.625em;
+  @media screen and (max-width: 500px) {
+    height: 23.625em;
+  }
 }
 .is-menu .form:hover {
   height: 20vw;

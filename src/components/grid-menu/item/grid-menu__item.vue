@@ -80,7 +80,6 @@ export default {
       } else {
         //open
         let siblings = $this.$el.parentElement.childNodes;
-        console.log("sd");
         // calls
 
         removeClassFromSiblings(className);
@@ -96,7 +95,6 @@ export default {
             if (siblings.hasOwnProperty(key)) {
               const element = siblings[key];
               element.classList.remove(className);
-              // $this.typed.start();
               if ($this.$el !== element) {
                 setTimeout(() => {
                   element.classList.remove("f-layer");
@@ -129,8 +127,11 @@ export default {
   top: 0;
   max-width: 0vw;
   max-height: 20vw;
-  width: 60vw;
-  height: 60vw;
+  @media screen and (max-width: 500px) {
+    max-height: 40vw;
+  }
+  width: 100vw;
+  height: 100vw;
   overflow: hidden;
   transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
   z-index: 1;
@@ -145,6 +146,10 @@ export default {
     transition: all 0.4s;
     transform: translate3d(0, 0, 0);
     word-break: break-all;
+    @media screen and (max-width: 500px) {
+      top: initial;
+      bottom: 1em;
+    }
   }
   &__item {
     opacity: 0;
@@ -157,16 +162,68 @@ export default {
     flex-direction: column;
     transition: all 0.4s ease-in-out;
     cursor: pointer;
+    @media screen and (max-width: 500px) {
+      width: 40vw;
+      height: 40vw;
+      border-bottom: 2px solid hsla(0, 0%, 100%, 0.1);
+      &#block6,
+      &#block4,
+      &#block2 {
+        .grid-menu__heading {
+          transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
+        }
+      }
+      &#block2.f-layer,
+      &#block4.f-layer {
+        .grid-menu__content {
+          left: initial;
+          right: 0 !important;
+        }
+      }
+      &#block6.f-layer {
+        .grid-menu__content {
+          left: initial;
+          top: initial;
+          right: 0 !important;
+          bottom: 0 !important;
+        }
+      }
+      &#block7.f-layer,
+      &#block5.f-layer {
+        .grid-menu__content {
+          top: initial;
+          bottom: 0 !important;
+        }
+      }
+    }
+    &#block7.f-layer,
+    &#block6.f-layer,
+    &#block5.f-layer {
+      .grid-menu__content {
+        top: initial;
+        bottom: 0 !important;
+      }
+    }
+    &#block4.f-layer {
+      .grid-menu__content {
+        left: initial;
+        right: 0 !important;
+      }
+    }
     &:hover {
       .grid-menu__content {
         max-width: 100%;
       }
     }
+
     &_expanded {
       z-index: 999 !important;
       &#block2 {
         .grid-menu__content {
           max-width: 60vw !important;
+          @media screen and (max-width: 500px) {
+            max-width: 80vw !important;
+          }
         }
       }
       &#block4 {
@@ -184,10 +241,33 @@ export default {
       &#block8 {
         .grid-menu__heading {
           transform: translate3d(1vw, 10vw, 0);
+          @media screen and (max-width: 500px) {
+            transform: translate3d(1vw, -38vw, 0);
+          }
         }
         .grid-menu__content {
           top: initial;
           bottom: 0;
+        }
+      }
+      @media screen and (max-width: 500px) {
+        &#block6,
+        &#block4,
+        &#block2 {
+          transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
+
+          .grid-menu__content {
+            right: 0;
+            left: initial;
+          }
+          .grid-menu__heading {
+            transform: translate3d(-38vw, 0, 0);
+          }
+        }
+        &#block6 {
+          .grid-menu__heading {
+            transform: translate3d(-38vw, -38vw, 0);
+          }
         }
       }
 
@@ -213,9 +293,14 @@ export default {
         max-height: 40vw !important;
         overflow: visible;
         background: hsl(228, 87%, 53%);
+        @media screen and (max-width: 500px) {
+          max-width: 80vw !important;
+          max-height: 80vw !important;
+        }
       }
     }
   }
+
   &__icon {
     display: flex;
     z-index: 4;
@@ -226,7 +311,7 @@ export default {
     margin: 3.8vw 0 0 1.8vw;
     z-index: 4;
     position: relative;
-    transition: all.4s;
+    transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
   }
 }
 </style>

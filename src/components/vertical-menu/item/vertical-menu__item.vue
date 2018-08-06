@@ -71,10 +71,13 @@ export default {
 
     // if side content
     if (this.hiddenContent) {
+      let contentWidth = "40vw";
+      if (window.outerWidth < 500) contentWidth = "80vw";
       const type = this.$el.querySelector(".vertical-menu__hidden-text");
       this.showTextContent = anime({
         targets: this.$el.querySelector(".vertical-menu__hidden-content"),
-        width: "45vw",
+        width: contentWidth,
+        zIndex: 999,
         duration: 600,
         easing: "easeInCubic",
         autoplay: false
@@ -150,7 +153,11 @@ export default {
 #circleArr__arr {
   opacity: 0;
 }
-
+.projects {
+  .vertical-menu__item {
+    overflow: hidden;
+  }
+}
 .vertical-menu {
   &__hidden-text {
     position: absolute;
@@ -171,8 +178,14 @@ export default {
     background: hsl(0, 0%, 5%);
     z-index: 10;
     width: 0;
+    @media screen and (max-width: 500px) {
+      padding-left: 1em;
+      transform: none;
+      z-index: -1;
+    }
   }
   &__item {
+    background: hsl(0, 0%, 5%);
     width: 20vw;
     height: 100vh;
     cursor: pointer;
@@ -181,6 +194,26 @@ export default {
     position: relative;
     opacity: 0;
     align-items: flex-end;
+    @media screen and (max-width: 500px) {
+      width: 40vw;
+      border-bottom: 2px solid hsla(0, 0%, 100%, 0.1);
+      border-left: 1px solid hsla(0, 0%, 100%, 0.1);
+      border-right: 1px solid hsla(0, 0%, 100%, 0.1);
+      height: 90vh;
+      top: 87vh;
+      &:nth-child(even) {
+        .vertical-menu__hidden-content {
+          transition: all 0.6s ease-in-out;
+        }
+      }
+      &:nth-child(odd) {
+        &_expanded {
+          .vertical-menu__hidden-content {
+            transform: translate3d(-20vh, 0, 0);
+          }
+        }
+      }
+    }
     &:hover {
       .vertical-menu {
         &__heading {
@@ -210,6 +243,7 @@ export default {
     opacity: 0;
     transition: all 0.8s ease-in-out;
     transform: translate3d(0, 0, 0);
+    z-index: 1;
   }
   &__content {
     transform: rotate(-90deg);
@@ -221,6 +255,8 @@ export default {
     height: 20vw;
     bottom: 40vh;
     padding-top: 1em;
+    @media screen and (max-width: 500px) {
+    }
   }
   &__heading {
     margin: 0;

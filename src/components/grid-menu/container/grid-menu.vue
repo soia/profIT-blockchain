@@ -21,7 +21,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .grid-menu {
   z-index: 1;
@@ -35,6 +34,10 @@ export default {
   line-height: 1;
   display: flex;
   flex-wrap: wrap;
+  @media screen and (max-width: 500px) {
+    top: 72px;
+    bottom: initial;
+  }
   &::before,
   &::after {
     content: "";
@@ -46,6 +49,9 @@ export default {
   }
   &::after {
     top: 20vw;
+    @media screen and (max-width: 500px) {
+      content: initial;
+    }
   }
   &::before {
     top: -1px;

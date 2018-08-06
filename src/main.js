@@ -45,9 +45,14 @@ new Vue({
 
 var menuOpened = false,
   menuAnimation = true;
-$(".menu-icon").click(openMenu());
-$(".menu__link").click(openMenu());
-
+$(document).ready(function() {
+  $(".menu-icon").each(function() {
+    $(this).click(openMenu());
+  });
+  $(".menu__link").each(function() {
+    $(this).click(openMenu());
+  });
+});
 function openMenu() {
   return function() {
     if (menuAnimation) {

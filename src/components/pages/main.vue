@@ -18,7 +18,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style lang="scss">
 .main__wrap {
   display: flex;
   flex-wrap: wrap;
@@ -28,6 +28,9 @@ export default {
   padding-bottom: 19vh;
   justify-content: space-between;
   min-height: 100vh;
+  @media screen and (max-width: 500px) {
+    margin-left: 10vw;
+  }
 }
 .main__h1 {
   font-family: "CourierNew", sans-serif;
