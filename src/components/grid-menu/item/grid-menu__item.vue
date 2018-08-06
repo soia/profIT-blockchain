@@ -241,7 +241,7 @@ export default {
           left: initial;
         }
         .grid-menu__heading {
-          transform: translate3d(-1.75vw, 0, 0);
+          transform: translate3d(-18.75vw, 0, 0);
         }
       }
       &#block5,

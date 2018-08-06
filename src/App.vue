@@ -316,6 +316,10 @@ body {
 .is-menu_close .menu__line {
   // height: 0;
   transition: all 0.4s ease-in-out;
+  .menu__link {
+    transition: all 0.1s 0s;
+    opacity: 0;
+  }
 }
 
 .menu__line:before {
@@ -668,7 +672,7 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 0;
+  z-index: 1;
 }
 
 .menu__link:hover .menu-hover {

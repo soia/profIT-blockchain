@@ -181,7 +181,7 @@ export default {
     left: 0;
     top: 0;
     transform: translate(calc(15vw - 2px), 0);
-    background: hsl(0, 0%, 5%);
+    background: hsl(0, 0%, 4%);
     z-index: 10;
     width: 0;
 
@@ -190,7 +190,6 @@ export default {
     }
   }
   &__item {
-    background: hsl(0, 0%, 5%);
     width: 20vw;
     height: 100vh;
     cursor: pointer;
@@ -199,6 +198,14 @@ export default {
     position: relative;
     opacity: 0;
     align-items: flex-end;
+    @media screen and (min-width: 500px) {
+      &:nth-child(n + 3) {
+        .vertical-menu__hidden-content {
+          transform: translate(-100%, 0);
+        }
+      }
+    }
+
     @media screen and (max-width: 500px) {
       width: 40vw;
       border-bottom: 2px solid hsla(0, 0%, 100%, 0.1);

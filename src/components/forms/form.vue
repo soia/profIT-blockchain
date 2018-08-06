@@ -65,8 +65,7 @@ export default {
   transition: 0.2s linear 0.4s;
   @media screen and (max-width: 500px) {
     height: 4.625em;
-  bottom: -4.625em;
-
+    bottom: -4.625em;
   }
 }
 .form:hover .button {
@@ -165,8 +164,19 @@ export default {
     height: 23.625em;
   }
 }
+@media screen and (max-width: 500px) {
+  .is-menu {
+    .form__cover {
+      background: hsl(0, 0%, 5%);
+      color: hsl(0, 0%, 100%);
+    }
+  }
+}
 .is-menu .form:hover {
   height: 20vw;
+  @media screen and (max-width: 500px) {
+    height: 23.625em;
+  }
 }
 .form:hover .form__group:after {
   width: 100%;
