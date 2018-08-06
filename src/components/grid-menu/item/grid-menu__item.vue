@@ -180,7 +180,8 @@ export default {
           right: 0 !important;
         }
       }
-      &#block6.f-layer {
+      &#block6.f-layer,
+      &#block8.f-layer {
         .grid-menu__content {
           left: initial;
           top: initial;
@@ -208,6 +209,14 @@ export default {
       .grid-menu__content {
         left: initial;
         right: 0 !important;
+      }
+    }
+    &#block8.f-layer {
+      .grid-menu__content {
+        left: initial;
+        top: initial;
+        right: 0 !important;
+        bottom: 0 !important;
       }
     }
     &:hover {
@@ -264,7 +273,8 @@ export default {
             transform: translate3d(-38vw, 0, 0);
           }
         }
-        &#block6 {
+        &#block6,
+        &#block8 {
           .grid-menu__heading {
             transform: translate3d(-38vw, -38vw, 0);
           }

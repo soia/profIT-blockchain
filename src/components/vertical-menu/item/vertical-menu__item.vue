@@ -72,12 +72,12 @@ export default {
     // if side content
     if (this.hiddenContent) {
       let contentWidth = "40vw";
-      if (window.outerWidth < 500) contentWidth = "80vw";
+      if (window.outerWidth < 500) contentWidth = "79vw";
       const type = this.$el.querySelector(".vertical-menu__hidden-text");
       this.showTextContent = anime({
         targets: this.$el.querySelector(".vertical-menu__hidden-content"),
         width: contentWidth,
-        zIndex: 999,
+        paddingLeft: "1em",
         duration: 600,
         easing: "easeInCubic",
         autoplay: false
@@ -153,9 +153,15 @@ export default {
 #circleArr__arr {
   opacity: 0;
 }
-.projects {
+.Projects {
   .vertical-menu__item {
     overflow: hidden;
+  }
+}
+.Projects,
+.Problems {
+  .bg-lines {
+    height: 195vh;
   }
 }
 .vertical-menu {
@@ -178,10 +184,9 @@ export default {
     background: hsl(0, 0%, 5%);
     z-index: 10;
     width: 0;
+
     @media screen and (max-width: 500px) {
-      padding-left: 1em;
       transform: none;
-      z-index: -1;
     }
   }
   &__item {
@@ -199,18 +204,12 @@ export default {
       border-bottom: 2px solid hsla(0, 0%, 100%, 0.1);
       border-left: 1px solid hsla(0, 0%, 100%, 0.1);
       border-right: 1px solid hsla(0, 0%, 100%, 0.1);
-      height: 90vh;
+      height: 97vh;
       top: 87vh;
+
       &:nth-child(even) {
         .vertical-menu__hidden-content {
-          transition: all 0.6s ease-in-out;
-        }
-      }
-      &:nth-child(odd) {
-        &_expanded {
-          .vertical-menu__hidden-content {
-            transform: translate3d(-20vh, 0, 0);
-          }
+          transform: translate3d(-22.5vh, 0, 0);
         }
       }
     }
@@ -255,8 +254,6 @@ export default {
     height: 20vw;
     bottom: 40vh;
     padding-top: 1em;
-    @media screen and (max-width: 500px) {
-    }
   }
   &__heading {
     margin: 0;

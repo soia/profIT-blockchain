@@ -1,5 +1,5 @@
 <template>
-<div id="app">
+<div id="app" >
     <SvgCollection/>
     <MainNav/>
     <router-view/>
@@ -18,6 +18,16 @@ export default {
     Router,
     Form,
     SvgCollection
+  },
+  mounted: function() {
+    document.querySelector("body").classList = "";
+    document.querySelector("body").classList.add(this.$route.name);
+  },
+  updated: function() {
+    setTimeout(() => {
+      document.querySelector("body").classList = "";
+      document.querySelector("body").classList.add(this.$route.name);
+    }, 750);
   },
   methods: {
     isFormVisible: function() {
