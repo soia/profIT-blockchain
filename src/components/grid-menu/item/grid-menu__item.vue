@@ -149,9 +149,11 @@ export default {
     transform: translate3d(0, 0, 0);
     word-break: break-all;
     font-size: 0.8em;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 400;
     @media screen and (max-width: 500px) {
-      top: initial;
-      bottom: 1em;
+      top: 6em;
+      padding-left: 30%;
     }
   }
   &__item {
@@ -354,6 +356,10 @@ export default {
     position: relative;
     transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
     font-size: 0.9em;
+    @media (max-width: 500px) {
+      margin-top: 28px;
+      margin-left: 18px;
+    }
   }
 }
 </style>

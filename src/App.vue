@@ -75,14 +75,12 @@ export default {
   font-weight: 300;
   font-style: normal;
 }
-
 @font-face {
   font-family: "CourierNew";
   src: url("./assets/fonts/courier-new/CourierBold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
-
 @font-face {
   font-family: "CourierNew";
   src: url("./assets/fonts/courier-new/CourierNewItalicFont.ttf")
@@ -130,7 +128,21 @@ body {
     }
   }
 }
-
+@media (max-width: 500px) {
+  .header {
+    .grid {
+      align-items: center;
+      .logo {
+        width: 35px;
+        overflow: hidden;
+        &__img {
+          height: 4.5em;
+          width: 15em;
+        }
+      }
+    }
+  }
+}
 .bg-lines div {
   position: absolute;
   height: 100vh;

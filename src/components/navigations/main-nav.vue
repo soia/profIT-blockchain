@@ -19,9 +19,13 @@
                     <router-link to="/projects" class="nav__a nav__a_last">{{ $t("message.projects") }}</router-link>
                 </nav>
             </div>
-            <div class="grid__col header__item header__item_lang">
+            <div class="grid__col header__item header__item_lang" v-if="this.desktop">
                 <a class='header__lang' v-on:click="switchLocaleToRu()">ru</a> /
                 <a class='header__lang' v-on:click="switchLocaleToEn()">en</a>
+            </div>
+            <div class="grid__col header__item header__item_lang circle-lang-switch" v-if="!this.desktop">
+                <a class='header__lang' @click="switchLocaleToRu()" v-show="this.$i18n.locale == 'en'">ru</a> 
+                <a class='header__lang' @click="switchLocaleToEn()" v-show="this.$i18n.locale == 'ru'">en</a>
             </div>
         </div>
     </header>
@@ -118,6 +122,7 @@
             <span>/</span>
             <a class='header__lang' v-on:click="switchLocaleToEn()">en</a>
         </div>
+        
         <router-link to='/partners' class="menu__link">
             <div class="menu-hover">
                 <h3 class="menu__desc">
@@ -190,7 +195,12 @@
                 <div class="menu-icon__item"></div>
                 <div class="menu-icon__item"></div>
             </div>
+             <div class="grid__col header__item header__item_lang circle-lang-switch" v-if="!this.desktop">
+                <a class='header__lang' @click="switchLocaleToRu()" v-show="this.$i18n.locale == 'en'">ru</a> 
+                <a class='header__lang' @click="switchLocaleToEn()" v-show="this.$i18n.locale == 'ru'">en</a>
+            </div>
         </div>
+        
         <router-link to='/technologies' class="menu__link">
             <div class="menu-hover">
                 <h3 class="menu__desc">
@@ -227,11 +237,8 @@
             </h3>
             <img class="menu__img" src='../../assets/img/menu/chevron.svg'>
         </router-link>
-        <div class="menu__header mobile-lang">
-            <a class='header__lang' v-on:click="switchLocaleToRu()">ru</a>
-            <span>/</span>
-            <a class='header__lang' v-on:click="switchLocaleToEn()">en</a>
-        </div>
+         
+        <div class="menu__mobile-line"></div>
         <div class="menu__mobile-line"></div>
         <div class="menu__mobile-line"></div>
         <div class="menu__mobile-line"></div>
@@ -270,6 +277,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.menu__line {
+  .circle-lang-switch {
+    visibility: hidden;
+    margin-right: -2px;
+    background: white;
+    border-color: black;
+  }
+}
+.is-menu {
+  .menu__line {
+    .circle-lang-switch {
+      visibility: visible;
+    }
+  }
+}
+.circle-lang-switch {
+  display: flex;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: black;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+  > a {
+    padding: 0;
+    margin: 0;
+  }
+}
 @media screen and (max-width: 500px) {
   .menu__line .menu-icon {
     display: none;
@@ -308,7 +344,7 @@ export default {
       background: hsla(0, 0%, 0%, 0.1);
       z-index: 999;
       &:nth-of-type(3) {
-        top: 20vw;
+       visibility: hidden;
       }
       &:nth-of-type(4) {
         top: 60vw;
