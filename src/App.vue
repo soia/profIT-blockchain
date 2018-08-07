@@ -370,6 +370,9 @@ body {
   transform: scaleX(0);
   transform-origin: left center;
   transition: 0.4s ease-in-out 0.35s;
+  @media (max-width: 500px) {
+    content: initial;
+  }
 }
 
 .home:after {

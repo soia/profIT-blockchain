@@ -90,7 +90,8 @@ export default {
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 500px) {
-    height: 4.625em;
+    height: 48px;
+    font-size: 10px;top: 1px;
   }
 }
 .input {

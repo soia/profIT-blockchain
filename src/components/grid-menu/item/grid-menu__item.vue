@@ -165,6 +165,9 @@ export default {
     flex-direction: column;
     transition: all 0.4s ease-in-out;
     cursor: pointer;
+    &:first-child {
+      border-left: 3px solid hsl(228, 87%, 53%);
+    }
     @media screen and (max-width: 500px) {
       width: 40vw;
       height: 40vw;
@@ -268,10 +271,9 @@ export default {
       }
       &#block5,
       &#block6,
-      &#block7,
-      &#block8 {
+      &#block7 {
         .grid-menu__heading {
-          transform: translate3d(1vw, 10vw, 0);
+          transform: translate3d(1vw, -20vw, 0);
           @media screen and (max-width: 500px) {
             transform: translate3d(1vw, -38vw, 0);
           }
@@ -281,6 +283,12 @@ export default {
           bottom: 0;
         }
       }
+      &#block8 {
+        .grid-menu__heading {
+          transform: translate3d(-19vw, -20vw, 0);
+        }
+      }
+
       @media screen and (max-width: 500px) {
         &#block6,
         &#block4,

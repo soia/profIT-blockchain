@@ -1,9 +1,8 @@
 <template>
 <section class="technologies main section home-technologies">
-    <GridMenu :data='array'/>
+    <GridMenu :data='array' />
 </section>
 </template>
-
 
 <script>
 import GridMenu from "@/components/grid-menu/container/grid-menu";
@@ -19,13 +18,15 @@ export default {
         {
           id: "block1",
           heading: "Blockchain",
-          //   icon: '<div class="icon">asd</div>'
+          icon: ``,
           desc:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
         },
+
         {
           id: "block2",
           heading: "Consensus",
+          icon: ``,
           desc:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
         },
