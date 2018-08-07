@@ -9,6 +9,7 @@ import VerticalMenu from "@/components/vertical-menu/container/vertical-menu";
 
 export default {
   name: "Projects",
+  props: ["isDesktop"],
   components: {
     VerticalMenu
   },

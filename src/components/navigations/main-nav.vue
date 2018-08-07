@@ -284,10 +284,21 @@ export default {
     background: white;
     border-color: black;
   }
+  .menu__header.logo {
+    visibility: hidden;
+  }
 }
 .is-menu {
   .menu__line {
     .circle-lang-switch {
+      visibility: visible;
+    }
+    .menu__header {
+      span {
+        color: black;
+      }
+    }
+    .menu__header.logo {
       visibility: visible;
     }
   }
@@ -344,7 +355,7 @@ export default {
       background: hsla(0, 0%, 0%, 0.1);
       z-index: 999;
       &:nth-of-type(3) {
-       visibility: hidden;
+        visibility: hidden;
       }
       &:nth-of-type(4) {
         top: 60vw;

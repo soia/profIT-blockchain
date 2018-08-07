@@ -151,18 +151,23 @@ export default {
 </script>
 
 <style lang="scss">
+@media screen and (max-width: 500px) {
+  .projects {
+    .vertical-menu__item {
+      height: 55vh;
+      top: 30vh;
+      border: none;
+      position: relative;
+    }
+  }
+}
 #circleArr__arr {
   opacity: 0;
-}
-.Projects {
-  .vertical-menu__item {
-    overflow: hidden;
-  }
 }
 .Projects,
 .Problems {
   .bg-lines {
-    height: 195vh;
+    height: 137vh;
   }
 }
 .vertical-menu {
@@ -268,6 +273,9 @@ export default {
     transition: all 0.5s ease-in-out;
     transform: translate3d(0, 0, 0);
     font-size: 0.92em;
+    @media (max-width: 500px) {
+      font-size: 20px;
+    }
   }
   &__hint-text {
     display: flex;
@@ -278,6 +286,9 @@ export default {
     opacity: 0.6;
     transition: 0.5s all 0.1s ease-in-out;
     transform: translate3d(0, 0, 0);
+    @media (max-width: 500px) {
+      font-size: 13px;
+    }
   }
   &__hint {
     display: flex;

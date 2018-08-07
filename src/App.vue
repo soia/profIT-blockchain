@@ -2,7 +2,7 @@
 <div id="app" >
     <SvgCollection/>
     <MainNav/>
-    <router-view/>
+    <router-view :isDesktop="this.desktop"/>
     <Form v-if="isFormVisible()"/>
 </div>
 </template>
@@ -22,6 +22,9 @@ export default {
   mounted: function() {
     document.querySelector("body").classList = "";
     document.querySelector("body").classList.add(this.$route.name);
+    if (window.outerWidth < 500) {
+      this.desktop = false;
+    }
   },
   updated: function() {
     setTimeout(() => {
@@ -44,7 +47,8 @@ export default {
   },
   data() {
     return {
-      currentRoute: window.location.pathname
+      currentRoute: window.location.pathname,
+      desktop: true
     };
   }
 };
