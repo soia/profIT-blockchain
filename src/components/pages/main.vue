@@ -19,6 +19,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+.Main {
+  .bg-lines {
+    height: 100%;
+  }
+}
 .main__wrap {
   display: flex;
   flex-wrap: wrap;

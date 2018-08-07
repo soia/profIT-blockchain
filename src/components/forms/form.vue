@@ -31,7 +31,7 @@ export default {
   z-index: 20;
   position: absolute;
   left: calc(30vw + 1px);
-  bottom: 0;
+  bottom: -5px;
   width: calc(20vw - 2px);
   height: 3.625em;
   overflow: hidden;
@@ -46,11 +46,11 @@ export default {
 }
 .button {
   width: 100%;
-  height: 3.625em;
+  height: 58px;
   font-family: "CourierNew", sans-serif;
   font-weight: 700;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 14px;
   letter-spacing: 1px;
   text-transform: uppercase;
   outline: none;
@@ -74,13 +74,13 @@ export default {
 .form__cover {
   position: absolute;
   width: 100%;
-  height: 3.625em;
+  height: 58px;
   background: #fff;
   color: #0c0c0c;
   font-family: "CourierNew", sans-serif;
   font-weight: 700;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 14px;
   letter-spacing: 1px;
   text-transform: uppercase;
   position: absolute;
@@ -116,10 +116,7 @@ export default {
   margin: 0 0 2em 0;
 }
 .form__group:first-child {
-  margin-top: 1.75em;
-}
-.form__group:last-child {
-  margin-top: 0.75em;
+  margin-top: 2em;
 }
 .form__group:after {
   content: "";

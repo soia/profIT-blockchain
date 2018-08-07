@@ -85,6 +85,7 @@ export default {
       this.typed = new Typed(type, {
         strings: [this.hiddenContent, ""],
         backDelay: 0,
+        typeSpeed: 0,
         showCursor: false,
         contentType: "text",
         onStringTyped: (arrayPos, self) => {
@@ -201,7 +202,7 @@ export default {
     @media screen and (min-width: 500px) {
       &:nth-child(n + 3) {
         .vertical-menu__hidden-content {
-          transform: translate(-100%, 0);
+          transform: translate(-105%, 0);
         }
       }
     }

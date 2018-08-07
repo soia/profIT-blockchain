@@ -111,7 +111,13 @@ body {
     overflow-x: hidden;
   }
 }
-
+.form__cover {
+  transition: all.4s;
+}
+.is-menu .form__cover {
+  background: #000 !important;
+  color: #fff !important;
+}
 .bg-lines {
   position: absolute;
   z-index: -1;
@@ -176,7 +182,8 @@ body {
 }
 
 .logo__img {
-  width: 7.5em;
+  width: 12em;
+  height: 3.5em;
 }
 
 .header__item {
@@ -359,7 +366,7 @@ body {
   height: 2px;
   width: 100vw;
   background: rgba(0, 0, 0, 0.1);
-  z-index: 30;
+  z-index: 999;
   transform: scaleX(0);
   transform-origin: left center;
   transition: 0.4s ease-in-out 0.35s;
@@ -573,6 +580,9 @@ body {
 .header__item_lang {
   margin-left: auto;
   justify-content: flex-end;
+  @media screen and (max-width: 500px) {
+    left: -2px;
+  }
 }
 
 .header__item_lang .menu__header {

@@ -30,6 +30,8 @@ export default {
       text = $this.$el.querySelector(".hidden-text");
     const itemsAppearing = anime({
       targets: ".grid-menu__item",
+      // typeSpeed: 0.00001,
+      typeSpeed: 0,
       opacity: 1,
       duration: 300,
       easing: "easeInCubic",
@@ -146,6 +148,7 @@ export default {
     transition: all 0.4s;
     transform: translate3d(0, 0, 0);
     word-break: break-all;
+    font-size: 0.8em;
     @media screen and (max-width: 500px) {
       top: initial;
       bottom: 1em;
@@ -165,7 +168,20 @@ export default {
     @media screen and (max-width: 500px) {
       width: 40vw;
       height: 40vw;
-      border-bottom: 2px solid hsla(0, 0%, 100%, 0.1);
+
+      &:nth-child(odd)::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100vw;
+        background: hsla(0, 0%, 100%, 0.1);
+        left: -10vw;
+      }
+      &:first-child {
+        &::after {
+          content: initial;
+        }
+      }
       &#block6,
       &#block4,
       &#block2 {
@@ -194,6 +210,12 @@ export default {
         .grid-menu__content {
           top: initial;
           bottom: 0 !important;
+        }
+      }
+      .circle-arrow {
+        svg {
+          width: 23px;
+          height: 23px;
         }
       }
     }
@@ -316,12 +338,14 @@ export default {
     z-index: 4;
     position: relative;
   }
+
   &__heading {
     color: #fff;
     margin: 3.8vw 0 0 1.8vw;
     z-index: 4;
     position: relative;
     transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
+    font-size: 0.9em;
   }
 }
 </style>
