@@ -14,6 +14,7 @@ export default {
   },
   data() {
     return {
+      
       array: [
         {
           id: "block1",

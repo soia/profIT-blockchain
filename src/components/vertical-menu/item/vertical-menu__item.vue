@@ -45,12 +45,12 @@ export default {
   name: "VerticalMenuItem",
   mounted: function() {
     const circlePaint = anime({
-      targets: "#circleArr circle",
+      targets: ".vertical-menu__item #circleArr circle",
       strokeDashoffset: 0,
       easing: "easeInCubic",
-      duration: 600,
+      duration: 700,
       delay: function(el, i, l) {
-        return i * 200;
+        return i * 210;
       }
     });
     const itemsAppearing = anime({
@@ -63,10 +63,13 @@ export default {
       }
     });
     const arrowAppearing = anime({
-      targets: "#circleArr #circleArr__arr",
+      targets: ".vertical-menu__item #circleArr #circleArr__arr",
       opacity: 1,
-      delay: 700,
-      duration: 300
+      duration: 300,
+      easing: "easeInCubic",
+      delay: function(el, i, l) {
+        return i * 300;
+      }
     });
 
     // if side content

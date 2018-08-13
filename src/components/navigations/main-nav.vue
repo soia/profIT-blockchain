@@ -13,9 +13,6 @@
                     <div class="menu-icon__item"></div>
                     <div class="menu-icon__item"></div>
                     <div class="menu-icon__item"></div>
-                    <svg class="menu-icon__circle" fill="transparent"  width="53" height="53">
-                        <circle class="outer" stroke-width="3" cx="26" cy="26" r="24.5" />
-                    </svg>
                 </div>
                 <nav class="nav header__nav">
                     <router-link to="/technologies" class="nav__a nav__a_first">{{ $t("message.technologies") }}</router-link>
@@ -45,13 +42,28 @@
                 <h3 class="menu__desc">
                     Наши<br> решения
                 </h3>
-                <img class="menu__img" src='../../assets/img/menu/chevron_white.svg'>
             </div>
 
             <h3 class="menu__desc">
                 Наши<br> решения
             </h3>
-            <img class="menu__img" src='../../assets/img/menu/chevron.svg'>
+            <div class="arrowIconHolder">
+                <svg id="circleArr" width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu" transform="translate(-369.000000, -461.000000)">
+                        <g  transform="translate(370.000000, 462.000000)">
+                            <g id="circleArr__arr" transform="translate(18.500000, 18.000000) rotate(-315.000000) translate(-18.500000, -18.000000) translate(9.000000, 12.000000)" fill="#000000">
+                                <polygon fill="currentColor"  id="Rectangle-6" points="13 0 19 6.0437128 13 12"></polygon>
+                                <rect fill="currentColor"  id="Rectangle-5" x="0" y="5" width="18" height="2"></rect>
+                            </g>
+                            <circle id="Oval-2" stroke="currentColor" stroke-width="2" cx="18" cy="18" r="18"></circle>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            </div>
         </router-link>
         <router-link to='/problems' class="menu__link">
             <div class="menu-hover">
@@ -59,51 +71,96 @@
                     Какие<br> проблемы
                     <br> Вас могут<br> ожидать?
                 </h3>
-                <img class="menu__img" src='../../assets/img/menu/chevron_white.svg'>
             </div>
             <h3 class="menu__desc">
                 Какие<br> проблемы
                 <br> Вас могут<br> ожидать?
             </h3>
-            <img class="menu__img" src='../../assets/img/menu/chevron.svg'>
+            <div class="arrowIconHolder">
+                <svg id="circleArr" width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu" transform="translate(-369.000000, -461.000000)">
+                        <g  transform="translate(370.000000, 462.000000)">
+                            <g id="circleArr__arr" transform="translate(18.500000, 18.000000) rotate(-315.000000) translate(-18.500000, -18.000000) translate(9.000000, 12.000000)" fill="#000000">
+                                <polygon fill="currentColor"  id="Rectangle-6" points="13 0 19 6.0437128 13 12"></polygon>
+                                <rect fill="currentColor"  id="Rectangle-5" x="0" y="5" width="18" height="2"></rect>
+                            </g>
+                            <circle id="Oval-2" stroke="currentColor" stroke-width="2" cx="18" cy="18" r="18"></circle>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            </div>
         </router-link>
     </div>
 
     <div class="menu__line menu__line_3" v-if="this.desktop">
         <div class="menu__header">
             <div class="menu-icon">
-                    <div class="menu-icon__item"></div>
-                    <div class="menu-icon__item"></div>
-                    <div class="menu-icon__item"></div>
-                    <div class="menu-icon__item"></div>
-                    <svg class="menu-icon__circle" fill="transparent"  width="53" height="53">
+                <div class="menu-icon__item"></div>
+                <div class="menu-icon__item"></div>
+                <div class="menu-icon__item"></div>
+                <div class="menu-icon__item"></div>
+                <svg class="menu-icon__circle" fill="transparent" width="53" height="53">
                         <circle class="outer"  stroke-width="3" cx="26" cy="26" r="24.5" />
                     </svg>
-                </div>
+            </div>
         </div>
         <router-link to='/technologies' class="menu__link">
             <div class="menu-hover">
                 <h3 class="menu__desc">
                     Технологии
                 </h3>
-                <img class="menu__img" src='../../assets/img/menu/chevron_white.svg'>
             </div>
             <h3 class="menu__desc">
                 Технологии
             </h3>
-            <img class="menu__img" src='../../assets/img/menu/chevron.svg'>
+            <div class="arrowIconHolder">
+                <svg id="circleArr" width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu" transform="translate(-369.000000, -461.000000)">
+                        <g  transform="translate(370.000000, 462.000000)">
+                            <g id="circleArr__arr" transform="translate(18.500000, 18.000000) rotate(-315.000000) translate(-18.500000, -18.000000) translate(9.000000, 12.000000)" fill="#000000">
+                                <polygon fill="currentColor"  id="Rectangle-6" points="13 0 19 6.0437128 13 12"></polygon>
+                                <rect fill="currentColor"  id="Rectangle-5" x="0" y="5" width="18" height="2"></rect>
+                            </g>
+                            <circle id="Oval-2" stroke="currentColor" stroke-width="2" cx="18" cy="18" r="18"></circle>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            </div>
         </router-link>
         <router-link to='/offers' class="menu__link menu__link_offers">
             <div class="menu-hover">
                 <h3 class="menu__desc">
                     Что мы<br>предлaгаем
                 </h3>
-                <img class="menu__img" src='../../assets/img/menu/chevron_white.svg'>
             </div>
             <h3 class="menu__desc">
                 Что мы<br>предлaгаем
             </h3>
-            <img class="menu__img" src='../../assets/img/menu/chevron.svg'>
+            <div class="arrowIconHolder">
+                <svg id="circleArr" width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu" transform="translate(-369.000000, -461.000000)">
+                        <g  transform="translate(370.000000, 462.000000)">
+                            <g id="circleArr__arr" transform="translate(18.500000, 18.000000) rotate(-315.000000) translate(-18.500000, -18.000000) translate(9.000000, 12.000000)" fill="#000000">
+                                <polygon fill="currentColor"  id="Rectangle-6" points="13 0 19 6.0437128 13 12"></polygon>
+                                <rect fill="currentColor"  id="Rectangle-5" x="0" y="5" width="18" height="2"></rect>
+                            </g>
+                            <circle id="Oval-2" stroke="currentColor" stroke-width="2" cx="18" cy="18" r="18"></circle>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            </div>
         </router-link>
     </div>
 
@@ -113,12 +170,27 @@
                 <h3 class="menu__desc">
                     Наши<br>проекты
                 </h3>
-                <img class="menu__img" src='../../assets/img/menu/chevron_white.svg'>
             </div>
             <h3 class="menu__desc">
                 Наши<br>проекты
             </h3>
-            <img class="menu__img" src='../../assets/img/menu/chevron.svg'>
+            <div class="arrowIconHolder">
+                <svg id="circleArr" width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu" transform="translate(-369.000000, -461.000000)">
+                        <g  transform="translate(370.000000, 462.000000)">
+                            <g id="circleArr__arr" transform="translate(18.500000, 18.000000) rotate(-315.000000) translate(-18.500000, -18.000000) translate(9.000000, 12.000000)" fill="#000000">
+                                <polygon fill="currentColor"  id="Rectangle-6" points="13 0 19 6.0437128 13 12"></polygon>
+                                <rect fill="currentColor"  id="Rectangle-5" x="0" y="5" width="18" height="2"></rect>
+                            </g>
+                            <circle id="Oval-2" stroke="currentColor" stroke-width="2" cx="18" cy="18" r="18"></circle>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            </div>
         </router-link>
     </div>
 
@@ -134,12 +206,27 @@
                 <h3 class="menu__desc">
                     Наши<br>партнеры
                 </h3>
-                <img class="menu__img" src='../../assets/img/menu/chevron_white.svg'>
             </div>
             <h3 class="menu__desc">
                 Наши<br>партнеры
             </h3>
-            <img class="menu__img" src='../../assets/img/menu/chevron.svg'>
+            <div class="arrowIconHolder">
+                <svg id="circleArr" width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu" transform="translate(-369.000000, -461.000000)">
+                        <g  transform="translate(370.000000, 462.000000)">
+                            <g id="circleArr__arr" transform="translate(18.500000, 18.000000) rotate(-315.000000) translate(-18.500000, -18.000000) translate(9.000000, 12.000000)" fill="#000000">
+                                <polygon fill="currentColor"  id="Rectangle-6" points="13 0 19 6.0437128 13 12"></polygon>
+                                <rect fill="currentColor"  id="Rectangle-5" x="0" y="5" width="18" height="2"></rect>
+                            </g>
+                            <circle id="Oval-2" stroke="currentColor" stroke-width="2" cx="18" cy="18" r="18"></circle>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            </div>
         </router-link>
 
     </div>
@@ -283,11 +370,71 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.menu__link {
+  .arrowIconHolder {
+    display: flex;
+    width: max-content;
+    position: absolute;
+    right: 1.5em;
+    bottom: 1.5em;
+    transform: rotate(-135deg);
+    color: black;
+    transition: color 0.5s ease-in-out 0.5s, transform 0.5s 0.5s;
+    z-index: 99;
+    #circleArr circle {
+      stroke-dashoffset: 126 !important;
+      transition: stroke-dashoffset 0.5s ease-in-out;
+    }
+    #circleArr__arr {
+      opacity: 0 !important;
+      transition: opacity 0.5s ease-in-out 0.1s;
+    }
+  }
+  .menu-hover {
+    transition-timing-function: ease-in-out !important;
+  }
+  &::before {
+    transition-duration: 0.6;
+    transition-timing-function: ease-in-out;
+  }
+  &.router-link-active {
+    &:hover {
+      .arrowIconHolder {
+        transition: color 0.5s ease-in-out 0.1s, transform 0.5s 0.5s;
+        * {
+          transition-delay: 0s !important;
+        }
+      }
+      .menu-hover {
+        transition-delay: 0s;
+      }
+    }
+  }
+  &:hover {
+    .arrowIconHolder {
+      color: white;
+      transform: rotate(-90deg);
+      #circleArr circle {
+        stroke-dashoffset: 0 !important;
+      }
+      #circleArr__arr {
+        opacity: 1 !important;
+      }
+    }
+    .menu-hover {
+      transition-delay: 0.45s;
+      width: calc(100% + 1px);
+    }
+    &::before {
+      height: 100%;
+    }
+  }
+}
+
 .menu-icon {
   transition: all.5s ease-in-out;
   &__circle {
     transform: translate(-34%, -38%) rotate(-90deg);
-
     .outer {
       stroke: white;
       stroke-dasharray: 164;
@@ -296,7 +443,6 @@ export default {
       z-index: 999;
     }
   }
-
   &::after {
     width: 5px;
     height: 5px;
@@ -310,18 +456,19 @@ export default {
     transition: all.5s ease-in-out;
   }
 }
+
 .menu__line {
   .menu-icon {
     transition: all.5s ease-in-out;
     &__circle {
       transform: translate(-37%, -38%) rotate(-180deg);
-
       .outer {
         stroke: black;
       }
     }
   }
 }
+
 .is-menu {
   .menu__line.menu__line_3 {
     overflow: visible;
@@ -340,7 +487,6 @@ export default {
     }
     border-color: black;
     transform: rotate(90deg);
-
     &::after {
       transform: translate(-50%, -50%) rotate(45deg) scale(1);
     }
@@ -413,6 +559,11 @@ export default {
 }
 
 @media screen and (max-width: 500px) {
+  .menu-hover {
+    .menu__img {
+      display: none;
+    }
+  }
   .menu__line .menu-icon {
     display: none;
   }

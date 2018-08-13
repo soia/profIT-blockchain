@@ -113,6 +113,9 @@ body {
     overflow-x: hidden;
   }
 }
+.closeIcon{
+  
+}
 .form__cover {
   transition: all.4s;
 }
@@ -638,7 +641,7 @@ body {
   width: 3px;
   height: 0;
   background-color: #1d46ef;
-  /* transition: 0.4s ease-in-out; */
+  transition: 0.4s ease-in-out;
 }
 
 .menu__link_offers:before {
@@ -707,9 +710,6 @@ body {
   z-index: 1;
 }
 
-.menu__link:hover .menu-hover {
-  width: calc(100% + 1px);
-}
 .menu-hover .menu__desc {
   color: #fff;
 }

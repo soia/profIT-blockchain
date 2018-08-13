@@ -5,14 +5,17 @@
     <h4 class="grid-menu__heading">
         {{title}}
     </h4>
-    <div class="circle-arrow">
-        <svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">		<!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->		<desc>Created with Sketch.</desc>		<defs></defs>		<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">		<g id="технологии" transform="translate(-369.000000, -461.000000)">		<g id="стрелка" transform="translate(370.000000, 462.000000)">		<g transform="translate(18.500000, 18.000000) rotate(-315.000000) translate(-18.500000, -18.000000) translate(9.000000, 12.000000)" fill="#FFFFFF">		<polygon id="Rectangle-6" points="13 0 19 6.0437128 13 12"></polygon>		<rect id="Rectangle-5" x="0" y="5" width="18" height="2"></rect>		</g>		<circle id="Oval-2" stroke="#FFFFFF" stroke-width="2" cx="18" cy="18" r="18"></circle>		</g>		</g>		</g>		</svg>
+    <div class="circle-arrow"  v-html="this.circleArrow">
+      
     </div>
     <div class="grid-menu__content">
         <span class="hidden hidden-text">		
 		{{desc}}
         </span>
         <span class="grid-menu__text"></span>
+        <div class="closeIcon"  v-html="this.closeIcon">
+
+        </div>
     </div>
 </div>
 </template>
@@ -115,7 +118,43 @@ export default {
   },
   data() {
     return {
-      expanded: false
+      expanded: false,
+      circleArrow: `<div class="arrowIconHolder">
+                <svg id="circleArr" width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu" transform="translate(-369.000000, -461.000000)">
+                        <g  transform="translate(370.000000, 462.000000)">
+                            <g id="circleArr__arr" transform="translate(18.500000, 18.000000) rotate(-315.000000) translate(-18.500000, -18.000000) translate(9.000000, 12.000000)" fill="#000000">
+                                <polygon fill="currentColor"  id="Rectangle-6" points="13 0 19 6.0437128 13 12"></polygon>
+                                <rect fill="currentColor"  id="Rectangle-5" x="0" y="5" width="18" height="2"></rect>
+                            </g>
+                            <circle id="Oval-2" stroke="currentColor" stroke-width="2" cx="18" cy="18" r="18"></circle>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            </div>`,
+      closeIcon: `<div class="closeIconHolder">
+                <svg id="closeIcon" width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu" transform="translate(-369.000000, -461.000000)">
+                        <g  transform="translate(370.000000, 462.000000)">
+                            <g class="closeIconRect closeIconRect_l" transform="translate(18.500000, 18.000000) rotate(-315.000000) translate(-18.500000, -18.000000) translate(9.000000, 12.000000)" fill="#000000">
+                                <rect fill="currentColor"  id="Rectangle-5" x="0" y="5" width="18" height="2"></rect>
+                            </g>
+                            <g class="closeIconRect closeIconRect_r" transform="translate(18.500000, 18.000000) rotate(-315.000000) translate(-18.500000, -18.000000) translate(9.000000, 12.000000)" fill="#000000">
+                                <rect fill="currentColor"  id="Rectangle-123" x="0" y="5" width="18" height="2"></rect>
+                            </g>
+                            <circle id="Oval-2" stroke="currentColor" stroke-width="2" cx="18" cy="18" r="18"></circle>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            </div>`
     };
   }
 };
@@ -129,14 +168,34 @@ export default {
   top: 0;
   max-width: 0vw;
   max-height: 20vw;
-  @media screen and (max-width: 500px) {
-    max-height: 40vw;
-  }
   width: 100vw;
   height: 100vw;
   overflow: hidden;
   transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
   z-index: 1;
+  @media screen and (max-width: 500px) {
+    max-height: 40vw;
+  }
+  .closeIcon {
+    position: absolute;
+    bottom: 1.5em;
+    right: 1.5em;
+    transform: translate3d(0, 0, 0) rotate(-45deg);
+
+    #closeIcon circle {
+      stroke-dasharray: 126;
+      stroke-dashoffset: 126;
+      transition: all.7s ease-in-out;
+    }
+    .closeIconRect {
+      position: absolute;
+      transition: all.6s ease-in-out;
+      visibility: hidden;
+      rect {
+        width: 19px;
+      }
+    }
+  }
 }
 .grid-menu {
   &__text {
@@ -167,16 +226,52 @@ export default {
     flex-direction: column;
     transition: all 0.4s ease-in-out;
     cursor: pointer;
-    &:first-child {
-      &::before {
-        content: "";
-        width: 3px;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: hsl(228, 87%, 53%);
+
+    &:hover {
+      .arrowIconHolder #circleArr {
+        transform: rotate(-45deg);
+        transition-delay: 1s;
+        #circleArr__arr {
+          opacity: 1;
+        }
       }
+      .grid-menu__content {
+        max-width: 100%;
+        transition-delay: 0.7s;
+      }
+      &::before {
+        height: 100%;
+      }
+      #circleArr circle {
+        stroke-dashoffset: 0;
+      }
+    }
+    .arrowIconHolder {
+      #circleArr {
+        transition: all.4s ease;
+
+        circle {
+          transition: all.7s ease-in-out;
+        }
+        #circleArr__arr {
+          opacity: 0;
+          transition: all.4s ease 0.3s;
+        }
+      }
+    }
+
+    &::before {
+      content: "";
+      width: 3px;
+      height: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: hsl(228, 87%, 53%);
+      transition: all.7s ease-in-out;
+    }
+    .circle-arrow {
+      transition-delay: 1s !important;
     }
     @media screen and (max-width: 500px) {
       width: 40vw;
@@ -255,14 +350,26 @@ export default {
         bottom: 0 !important;
       }
     }
-    &:hover {
-      .grid-menu__content {
-        max-width: 100%;
-      }
-    }
 
     &_expanded {
       z-index: 999 !important;
+      #closeIcon circle {
+        stroke-dashoffset: 0 !important;
+        transition-delay: 0.8s !important;
+      }
+      .closeIconRect {
+        visibility: visible !important;
+        transition-delay: 1.2s !important;
+
+        &_l {
+          transform: translate(17.5px, 18px) rotate(-360deg)
+            translate(-18.5px, -18px) translate(9px, 12px);
+        }
+        &_r {
+          transform: translate(17.5px, 18px) rotate(-270deg)
+            translate(-18.5px, -18px) translate(9px, 12px);
+        }
+      }
       &#block2 {
         .grid-menu__content {
           max-width: 60vw !important;
@@ -337,12 +444,15 @@ export default {
         transform: translate3d(1vw, 0, 0);
       }
       .circle-arrow {
+        transition-delay: 0s !important;
         transform: scale(0);
       }
       .grid-menu__content {
         max-width: 40vw !important;
         max-height: 40vw !important;
         overflow: visible;
+        transition-delay: 0s !important;
+
         background: hsl(228, 87%, 53%);
         @media screen and (max-width: 500px) {
           max-width: 80vw !important;
