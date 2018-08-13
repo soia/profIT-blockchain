@@ -154,20 +154,32 @@ export default {
 @media screen and (max-width: 500px) {
   .projects {
     .vertical-menu__item {
+      overflow: hidden;
       height: 55vh;
       top: 30vh;
       border: none;
       position: relative;
     }
   }
+  .problems {
+    .vertical-menu__item {
+      border: none;
+      height: 70vh;
+      top: 58vh;
+    }
+  }
 }
 #circleArr__arr {
   opacity: 0;
 }
-.Projects,
-.Problems {
+.Projects {
   .bg-lines {
     height: 137vh;
+  }
+}
+.Problems {
+  .bg-lines {
+    height: 170vh;
   }
 }
 .vertical-menu {
@@ -251,7 +263,7 @@ export default {
     left: 0;
     height: calc(100% + 3vh);
     object-fit: cover;
-    z-index: -1;
+    z-index: -1 !important;
     opacity: 0;
     transition: all 0.8s ease-in-out;
     transform: translate3d(0, 0, 0);
@@ -305,6 +317,10 @@ export default {
     transform-origin: center center;
     transition: all 0.5s ease-in-out;
     margin-left: 5vh;
+    @media (max-width: 500px) {
+      width: 30px;
+      height: 30px;
+    }
   }
   &__text-wrap {
     & + * {

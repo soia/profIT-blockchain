@@ -215,6 +215,9 @@ body {
   height: 15px;
   cursor: pointer;
   left: -1px;
+  @media (max-width: 500px) {
+    left: 0;
+  }
 }
 
 .menu-icon:after {

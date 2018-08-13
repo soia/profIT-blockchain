@@ -168,7 +168,15 @@ export default {
     transition: all 0.4s ease-in-out;
     cursor: pointer;
     &:first-child {
-      border-left: 3px solid hsl(228, 87%, 53%);
+      &::before {
+        content: "";
+        width: 3px;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: hsl(228, 87%, 53%);
+      }
     }
     @media screen and (max-width: 500px) {
       width: 40vw;
@@ -181,6 +189,7 @@ export default {
         width: 100vw;
         background: hsla(0, 0%, 100%, 0.1);
         left: -10vw;
+        top: 0;
       }
       &:first-child {
         &::after {

@@ -64,8 +64,9 @@ export default {
   bottom: -3.625em;
   transition: 0.2s linear 0.4s;
   @media screen and (max-width: 500px) {
-    height: 4.625em;
-    bottom: -4.625em;
+    height: 48px;
+    font-size: 10px;
+    bottom: -50px;
   }
 }
 .form:hover .button {
@@ -91,7 +92,7 @@ export default {
   align-items: center;
   @media screen and (max-width: 500px) {
     height: 48px;
-    font-size: 10px;top: 1px;
+    font-size: 10px;
   }
 }
 .input {

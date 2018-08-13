@@ -1,7 +1,7 @@
 <template>
     <section class="vertical-menu">
         <VerticalMenuItem :key="item.id" :id="item.id" :img="item.img" :title="item.heading" :desc="item.desc" :hiddenContent="item.hiddenContent" v-for="item in array"/>
-        <div class="line-divide"></div>
+        <div class="line-divide" v-if="!this.isDesktop"></div>
     </section>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   components: {
     VerticalMenuItem
   },
-  props: ["data"],
+  props: ["data", "isDesktop"],
   data() {
     return {
       array: this.data
@@ -39,5 +39,22 @@ export default {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  .line-divide {
+    position: absolute;
+    width: 100vw;
+    height: 2px;
+    left: 44.5%;
+    transform: translate(-50%, 0);
+    background: hsla(0, 0%, 100%, 0.1);
+  }
+  .Projects .line-divide {
+    top: 85vh;
+  }
+
+  .Problems .line-divide {
+    top: 128vh;
+  }
 }
 </style>
