@@ -32,6 +32,12 @@
         <span class="vertical-menu__hidden-text">
         </span>
     </div>
+    <div class="project-desc" v-if="this.projectDesc">
+        <span class="project-desc__text">
+        {{this.projectDesc.desc}}
+      </span>
+        <a @click="(e) => e.stopPropagation()" :href="'https://'+ this.projectDesc.link" class="project-desc__link">  {{this.projectDesc.link}}</a>
+    </div>
     <img class="vertical-menu__img" v-if="this.img" :src="this.img" alt="">
 </div>
 </template>
@@ -41,7 +47,7 @@ import anime from "animejs";
 import Typed from "typed.js";
 
 export default {
-  props: ["title", "img", "desc", "hiddenContent"],
+  props: ["title", "img", "desc", "hiddenContent", "projectDesc"],
   name: "VerticalMenuItem",
   mounted: function() {
     const circlePaint = anime({
@@ -155,6 +161,91 @@ export default {
 </script>
 
 <style lang="scss">
+@media screen and (min-width: 500px) {
+  .projects {
+    .project-desc {
+      display: flex;
+      flex-direction: column;
+      width: 30vw;
+      font-weight: 100;
+      position: absolute;
+      bottom: 13vw;
+      right: 20vw;
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+      &__text {
+        color: white;
+        font-size: 22px;
+        font-family: "CourierNew";
+        font-weight: 100;
+        font-style: italic;
+        & + * {
+          margin-top: 5vh;
+        }
+      }
+      &__link {
+        text-decoration-color: transparent;
+        transition: all.4s;
+        color: white;
+        font-size: 20px;
+        &:hover {
+          text-decoration-color: white;
+        }
+      }
+    }
+    .vertical-menu__item {
+      transition: all 0.7s ease-in-out;
+      position: absolute;
+      bottom: 0;
+      overflow: hidden;
+      .vertical-menu__img {
+        width: 100vw;
+      }
+      .vertical-menu__content {
+        transition: all 0.7s ease-in-out;
+      }
+      &:nth-child(1) {
+        left: 0;
+        &.vertical-menu__item_expanded {
+          left: -10vw !important;
+        }
+      }
+      &:nth-child(2) {
+        left: 20vw;
+        &.vertical-menu__item_expanded {
+          left: 10vw !important;
+        }
+      }
+      &:nth-child(3) {
+        left: 40vw;
+        &.vertical-menu__item_expanded {
+          left: 30vw !important;
+        }
+      }
+      &:nth-child(4) {
+        left: 60vw;
+        &.vertical-menu__item_expanded {
+          left: 50vw !important;
+        }
+      }
+      &_expanded {
+        width: 100vw;
+        left: 10vw !important;
+        position: absolute;
+        .project-desc {
+          opacity: 1;
+          transition-delay: 0.3s;
+        }
+        .vertical-menu__img {
+          opacity: 0.5;
+        }
+        .vertical-menu__content {
+          transform: rotate(-90deg) translate3d(0, -30vw, 0);
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 500px) {
   .projects {
     .vertical-menu__item {
@@ -228,32 +319,28 @@ export default {
     &_expanded {
       z-index: 105 !important;
       transition-delay: 0s;
-      background: black;
+      background: hsl(0, 0%, 4%);
     }
     @media (min-width: 500px) {
       &:nth-child(2) {
         z-index: 102;
-
         &.vertical-menu__item_expanded {
           transform: translate(-20vw, 0);
         }
       }
       &:nth-child(3) {
         z-index: 101;
-
         &.vertical-menu__item_expanded {
           transform: translate(-40vw, 0);
         }
       }
       &:nth-child(4) {
         z-index: 100;
-
         &.vertical-menu__item_expanded {
           transform: translate(-60vw, 0);
         }
       }
     }
-
     @media (max-width: 500px) {
       width: 40vw;
       border-bottom: 2px solid hsla(0, 0%, 100%, 0.1);
@@ -261,14 +348,12 @@ export default {
       border-right: 1px solid hsla(0, 0%, 100%, 0.1);
       height: 97vh;
       top: 87vh;
-
       &:nth-child(1),
       &:nth-child(3) {
         .vertical-menu__hidden-content {
           transform: translate(40vw, 0);
         }
       }
-
       &:nth-child(2),
       &:nth-child(4) {
         .vertical-menu__hidden-content {

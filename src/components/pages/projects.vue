@@ -20,25 +20,41 @@ export default {
           id: "block1",
           heading: "Bitspulse",
           img:
-            "https://images.pexels.com/photos/4827/nature-forest-trees-fog.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            "https://images.pexels.com/photos/4827/nature-forest-trees-fog.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+          projectDesc: {
+            desc: "Разработка онлайн-игры на базе blockchain +  ICO",
+            link: "bitspulse.com"
+          }
         },
         {
           id: "block2",
           heading: "Articcoin",
           img:
-            "https://images.pexels.com/photos/696680/pexels-photo-696680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            "https://images.pexels.com/photos/696680/pexels-photo-696680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+          projectDesc: {
+            desc: "Разработка онлайн-игры на базе blockchain +  ICO",
+            link: "bitspulse.com"
+          }
         },
         {
           id: "block3",
           heading: "IGF Fund",
           img:
-            "https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            "https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+          projectDesc: {
+            desc: "Разработка онлайн-игры на базе blockchain +  ICO",
+            link: "bitspulse.com"
+          }
         },
         {
           id: "block4",
           heading: "Axis",
           img:
-            "https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            "https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+          projectDesc: {
+            desc: "Разработка онлайн-игры на базе blockchain +  ICO",
+            link: "bitspulse.com"
+          }
         }
       ]
     };
