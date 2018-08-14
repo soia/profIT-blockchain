@@ -19,20 +19,23 @@ export default {
         {
           id: "block1",
           heading: "Не добросовесные команды",
-		  desc: "Проблема 1",
-		  hiddenContent:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, veniam natus architecto iusto provident nisi aliquam asperiores molestiae est, culpa tempora aliquid rem ab voluptate expedita voluptatum. Quis, adipisci hic?"
+          desc: "Проблема 1",
+          hiddenContent:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, veniam natus architecto iusto provident nisi aliquam asperiores molestiae est, culpa tempora aliquid rem ab voluptate expedita voluptatum. Quis, adipisci hic?"
         },
         {
           id: "block2",
           heading: "Не правильно подобраные технологии",
-		  desc: "Проблема 2",
-		  hiddenContent:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, veniam natus architecto iusto provident nisi aliquam asperiores molestiae est, culpa tempora aliquid rem ab voluptate expedita voluptatum. Quis, adipisci hic?"
+          desc: "Проблема 2",
+          hiddenContent:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, veniam natus architecto iusto provident nisi aliquam asperiores molestiae est, culpa tempora aliquid rem ab voluptate expedita voluptatum. Quis, adipisci hic?"
         },
         {
           id: "block3",
           heading: 'Отсутствие понятия "безопасность"',
-		  desc: "Проблема 3",
-		  hiddenContent:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, veniam natus architecto iusto provident nisi aliquam asperiores molestiae est, culpa tempora aliquid rem ab voluptate expedita voluptatum. Quis, adipisci hic?"
+          desc: "Проблема 3",
+          hiddenContent:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, veniam natus architecto iusto provident nisi aliquam asperiores molestiae est, culpa tempora aliquid rem ab voluptate expedita voluptatum. Quis, adipisci hic?"
         }
       ]
     };
@@ -57,6 +60,9 @@ export default {
       position: absolute;
       right: 0;
       top: 1.6em;
+      @media (max-width: 500px) {
+        right: -2em;
+      }
     }
   }
 }

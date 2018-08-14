@@ -75,8 +75,8 @@ export default {
     // if side content
     if (this.hiddenContent) {
       let contentWidth = "40vw";
-      if (window.outerWidth < 500) contentWidth = "79vw";
       const type = this.$el.querySelector(".vertical-menu__hidden-text");
+
       this.showTextContent = anime({
         targets: this.$el.querySelector(".vertical-menu__hidden-content"),
         width: contentWidth,
@@ -85,6 +85,7 @@ export default {
         easing: "easeInCubic",
         autoplay: false
       });
+
       this.typed = new Typed(type, {
         strings: [this.hiddenContent, ""],
         backDelay: 0,
@@ -172,19 +173,23 @@ export default {
     }
   }
 }
+
 #circleArr__arr {
   opacity: 0;
 }
+
 .Projects {
   .bg-lines {
     height: 137vh;
   }
 }
+
 .Problems {
   .bg-lines {
     height: 170vh;
   }
 }
+
 .vertical-menu {
   &__hidden-text {
     position: absolute;
@@ -205,7 +210,6 @@ export default {
     background: hsl(0, 0%, 4%);
     z-index: 10;
     width: 0;
-
     @media screen and (max-width: 500px) {
       transform: none;
     }
@@ -219,15 +223,38 @@ export default {
     position: relative;
     opacity: 0;
     align-items: flex-end;
-    @media screen and (min-width: 500px) {
-      &:nth-child(n + 3) {
-        .vertical-menu__hidden-content {
-          transform: translate(-105%, 0);
+    transition: all 0.5s ease-in-out 0.5s;
+    z-index: 103;
+    &_expanded {
+      z-index: 105 !important;
+      transition-delay: 0s;
+      background: black;
+    }
+    @media (min-width: 500px) {
+      &:nth-child(2) {
+        z-index: 102;
+
+        &.vertical-menu__item_expanded {
+          transform: translate(-20vw, 0);
+        }
+      }
+      &:nth-child(3) {
+        z-index: 101;
+
+        &.vertical-menu__item_expanded {
+          transform: translate(-40vw, 0);
+        }
+      }
+      &:nth-child(4) {
+        z-index: 100;
+
+        &.vertical-menu__item_expanded {
+          transform: translate(-60vw, 0);
         }
       }
     }
 
-    @media screen and (max-width: 500px) {
+    @media (max-width: 500px) {
       width: 40vw;
       border-bottom: 2px solid hsla(0, 0%, 100%, 0.1);
       border-left: 1px solid hsla(0, 0%, 100%, 0.1);
@@ -235,9 +262,20 @@ export default {
       height: 97vh;
       top: 87vh;
 
-      &:nth-child(even) {
+      &:nth-child(1),
+      &:nth-child(3) {
         .vertical-menu__hidden-content {
-          transform: translate3d(-22.5vh, 0, 0);
+          transform: translate(40vw, 0);
+        }
+      }
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        .vertical-menu__hidden-content {
+          transform: translate(40vw, 0);
+        }
+        &.vertical-menu__item_expanded {
+          transform: translate(-40vw, 0);
         }
       }
     }
