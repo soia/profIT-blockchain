@@ -33,7 +33,6 @@ export default {
       text = $this.$el.querySelector(".hidden-text");
     const itemsAppearing = anime({
       targets: ".grid-menu__item",
-      // typeSpeed: 0.00001,
       typeSpeed: 0,
       opacity: 1,
       duration: 300,
@@ -80,7 +79,7 @@ export default {
           $this.$el.classList.remove(className);
           setTimeout(() => {
             $this.$el.classList.remove("f-layer");
-          }, 700);
+          }, 1400);
         }
       } else {
         //open
@@ -103,7 +102,7 @@ export default {
               if ($this.$el !== element) {
                 setTimeout(() => {
                   element.classList.remove("f-layer");
-                }, 700);
+                }, 1400);
               }
             }
           }
@@ -442,6 +441,7 @@ export default {
       }
       .grid-menu__heading {
         transform: translate3d(1vw, 0, 0);
+        transition-delay: 0s !important;
       }
       .circle-arrow {
         transition-delay: 0s !important;
@@ -474,6 +474,7 @@ export default {
     z-index: 4;
     position: relative;
     transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
+    transition-delay: 0.7s;
     font-size: 0.9em;
     @media (max-width: 500px) {
       margin-top: 28px;
