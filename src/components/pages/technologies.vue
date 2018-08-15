@@ -1,6 +1,7 @@
 <template>
 <section class="technologies main section home-technologies">
     <GridMenu :data='array' />
+
 </section>
 </template>
 
@@ -14,58 +15,71 @@ export default {
   },
   data() {
     return {
-      
       array: [
         {
           id: "block1",
           heading: "Blockchain",
-          icon: ``,
-          desc:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
+          icon: `<img width="50" height="50" src="@/assets/img/content/blockchain.png" alt="">`,
+          desc: `Каждый продукт ставит перед собой цели решить определенные проблемы или задачи. На рынке blockchain разработок даже разработчики не всегда понимают всех ньюансов и предлагают шаблонные решения, клиент не являясь специалистом в данной теме, верит на слово и сталкивается с проблемами, которые приводят к перевыпуску токена или переработке продукта после его запуска (успешных сборов средств на ICO-кампаниях или получения популярности среди клиентов). Продукт не выдерживает количевства транзакций, или не справляется с нагрузками. 
+Что приводит к остановке деятельности 
+компании и потери репутации`
         },
 
         {
           id: "block2",
           heading: "Consensus",
-          icon: ``,
-          desc:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
+          icon: `<img width="50" height="50" src="@/assets/img/content/blockchain.png" alt="">`,
+          desc: `Каждый продукт ставит перед собой цели решить определенные проблемы или задачи. На рынке blockchain разработок даже разработчики не всегда понимают всех ньюансов и предлагают шаблонные решения, клиент не являясь специалистом в данной теме, верит на слово и сталкивается с проблемами, которые приводят к перевыпуску токена или переработке продукта после его запуска (успешных сборов средств на ICO-кампаниях или получения популярности среди клиентов). Продукт не выдерживает количевства транзакций, или не справляется с нагрузками. 
+Что приводит к остановке деятельности 
+компании и потери репутации`
         },
         {
           id: "block3",
           heading: "Сryptographic network protocols ",
-          desc:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
+          icon: `<img width="50" height="50" src="@/assets/img/content/blockchain.png" alt="">`,
+          desc: `Каждый продукт ставит перед собой цели решить определенные проблемы или задачи. На рынке blockchain разработок даже разработчики не всегда понимают всех ньюансов и предлагают шаблонные решения, клиент не являясь специалистом в данной теме, верит на слово и сталкивается с проблемами, которые приводят к перевыпуску токена или переработке продукта после его запуска (успешных сборов средств на ICO-кампаниях или получения популярности среди клиентов). Продукт не выдерживает количевства транзакций, или не справляется с нагрузками. 
+Что приводит к остановке деятельности 
+компании и потери репутации`
         },
         {
           id: "block4",
           heading: "Dapp Browsers",
-          desc:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
+          icon: `<img width="50" height="50" src="@/assets/img/content/blockchain.png" alt="">`,
+          desc: `Каждый продукт ставит перед собой цели решить определенные проблемы или задачи. На рынке blockchain разработок даже разработчики не всегда понимают всех ньюансов и предлагают шаблонные решения, клиент не являясь специалистом в данной теме, верит на слово и сталкивается с проблемами, которые приводят к перевыпуску токена или переработке продукта после его запуска (успешных сборов средств на ICO-кампаниях или получения популярности среди клиентов). Продукт не выдерживает количевства транзакций, или не справляется с нагрузками. 
+Что приводит к остановке деятельности 
+компании и потери репутации`
         },
         {
           id: "block5",
           heading: "Data Feeds",
-          desc:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
+          icon: `<img width="50" height="50" src="@/assets/img/content/blockchain.png" alt="">`,
+          desc: `Каждый продукт ставит перед собой цели решить определенные проблемы или задачи. На рынке blockchain разработок даже разработчики не всегда понимают всех ньюансов и предлагают шаблонные решения, клиент не являясь специалистом в данной теме, верит на слово и сталкивается с проблемами, которые приводят к перевыпуску токена или переработке продукта после его запуска (успешных сборов средств на ICO-кампаниях или получения популярности среди клиентов). Продукт не выдерживает количевства транзакций, или не справляется с нагрузками. 
+Что приводит к остановке деятельности 
+компании и потери репутации`
         },
         {
           id: "block6",
           heading: "Decentralized applications",
-          desc:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
+          icon: `<img width="50" height="50" src="@/assets/img/content/blockchain.png" alt="">`,
+          desc: `Каждый продукт ставит перед собой цели решить определенные проблемы или задачи. На рынке blockchain разработок даже разработчики не всегда понимают всех ньюансов и предлагают шаблонные решения, клиент не являясь специалистом в данной теме, верит на слово и сталкивается с проблемами, которые приводят к перевыпуску токена или переработке продукта после его запуска (успешных сборов средств на ICO-кампаниях или получения популярности среди клиентов). Продукт не выдерживает количевства транзакций, или не справляется с нагрузками. 
+Что приводит к остановке деятельности 
+компании и потери репутации`
         },
         {
           id: "block7",
           heading: "Messaging",
-          desc:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
+          icon: `<img width="50" height="50" src="@/assets/img/content/blockchain.png" alt="">`,
+          desc: `Каждый продукт ставит перед собой цели решить определенные проблемы или задачи. На рынке blockchain разработок даже разработчики не всегда понимают всех ньюансов и предлагают шаблонные решения, клиент не являясь специалистом в данной теме, верит на слово и сталкивается с проблемами, которые приводят к перевыпуску токена или переработке продукта после его запуска (успешных сборов средств на ICO-кампаниях или получения популярности среди клиентов). Продукт не выдерживает количевства транзакций, или не справляется с нагрузками. 
+Что приводит к остановке деятельности 
+компании и потери репутации`
         },
         {
           id: "block8",
           heading: "Storage",
-          desc:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, sunt! Repudiandae possimus amet sint non magni blanditiis numquam iste eaque illo, consectetur, accusantium dolorum repellendus quia soluta, molestias hic necessitatibus!"
+          icon: `<img width="50" height="50" src="@/assets/img/content/blockchain.png" alt="">`,
+          desc: `Каждый продукт ставит перед собой цели решить определенные проблемы или задачи. На рынке blockchain разработок даже разработчики не всегда понимают всех ньюансов и предлагают шаблонные решения, клиент не являясь специалистом в данной теме, верит на слово и сталкивается с проблемами, которые приводят к перевыпуску токена или переработке продукта после его запуска (успешных сборов средств на ICO-кампаниях или получения популярности среди клиентов). Продукт не выдерживает количевства транзакций, или не справляется с нагрузками. 
+Что приводит к остановке деятельности 
+компании и потери репутации`
         }
       ]
     };

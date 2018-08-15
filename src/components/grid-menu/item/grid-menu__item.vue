@@ -1,21 +1,17 @@
 <template>
-<div class="grid-menu__item" @click="expand" >
+<div class="grid-menu__item" @click="expand">
     <div class="grid-menu__icon" v-html="this.icon">
     </div>
     <h4 class="grid-menu__heading">
         {{title}}
     </h4>
-    <div class="circle-arrow"  v-html="this.circleArrow">
-      
-    </div>
+    <div class="circle-arrow" v-html="this.circleArrow"></div>
     <div class="grid-menu__content">
         <span class="hidden hidden-text">		
-		{{desc}}
+          {{desc}}
         </span>
         <span class="grid-menu__text"></span>
-        <div class="closeIcon"  v-html="this.closeIcon">
-
-        </div>
+        <div class="closeIcon" v-html="this.closeIcon"></div>
     </div>
 </div>
 </template>
@@ -31,6 +27,7 @@ export default {
     let $this = this,
       type = $this.$el.querySelector(".grid-menu__text"),
       text = $this.$el.querySelector(".hidden-text");
+
     const itemsAppearing = anime({
       targets: ".grid-menu__item",
       typeSpeed: 0,
@@ -41,6 +38,7 @@ export default {
         return i * 100;
       }
     });
+
     this.typed = new Typed(type, {
       strings: [text.innerHTML, ""],
       backDelay: 0,
@@ -160,6 +158,48 @@ export default {
 </script>
 
 <style lang="scss">
+.technologies {
+  .grid-menu__item_expanded {
+    .grid-menu__content {
+      max-width: 60vw !important;
+      @media screen and (max-width: 500px) {
+        max-width: 80vw !important;
+      }
+    }
+  }
+  .grid-menu__heading {
+    margin-top: 3.2vw;
+    font-size: 0.8em;
+  }
+  .grid-menu__content {
+    .closeIcon {
+      right: initial;
+      bottom: initial;
+      top: 8.5em;
+      left: 1.5em;
+    }
+  }
+  .grid-menu__text {
+    top: 10vw;
+    line-height: 1.4;
+    left: 17.8vw;
+    width: 60%;
+    font-size: 0.758em;
+    word-break: initial;
+  }
+  .grid-menu__icon {
+    transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1) 0.7s;
+    margin-left: 1.8vw;
+    margin-top: 3.2vw;
+    img {
+      background: white;
+    }
+  }
+  .grid-menu__item_expanded .grid-menu__icon {
+    transform: translate3d(1vw, 0, 0);
+    transition-delay: 0s;
+  }
+}
 .grid-menu__content {
   position: absolute;
   background: hsl(228, 87%, 53%);
@@ -180,7 +220,6 @@ export default {
     bottom: 1.5em;
     right: 1.5em;
     transform: translate3d(0, 0, 0) rotate(-45deg);
-
     #closeIcon circle {
       stroke-dasharray: 126;
       stroke-dashoffset: 126;
@@ -196,6 +235,7 @@ export default {
     }
   }
 }
+
 .grid-menu {
   &__text {
     position: absolute;
@@ -225,7 +265,6 @@ export default {
     flex-direction: column;
     transition: all 0.4s ease-in-out;
     cursor: pointer;
-
     &:hover {
       .arrowIconHolder #circleArr {
         transform: rotate(-45deg);
@@ -248,7 +287,6 @@ export default {
     .arrowIconHolder {
       #circleArr {
         transition: all.4s ease;
-
         circle {
           transition: all.7s ease-in-out;
         }
@@ -258,7 +296,6 @@ export default {
         }
       }
     }
-
     &::before {
       content: "";
       width: 3px;
@@ -275,7 +312,6 @@ export default {
     @media screen and (max-width: 500px) {
       width: 40vw;
       height: 40vw;
-
       &:nth-child(odd)::after {
         content: "";
         position: absolute;
@@ -349,7 +385,6 @@ export default {
         bottom: 0 !important;
       }
     }
-
     &_expanded {
       z-index: 999 !important;
       #closeIcon circle {
@@ -359,7 +394,6 @@ export default {
       .closeIconRect {
         visibility: visible !important;
         transition-delay: 1.2s !important;
-
         &_l {
           transform: translate(17.5px, 18px) rotate(-360deg)
             translate(-18.5px, -18px) translate(9px, 12px);
@@ -369,14 +403,7 @@ export default {
             translate(-18.5px, -18px) translate(9px, 12px);
         }
       }
-      &#block2 {
-        .grid-menu__content {
-          max-width: 60vw !important;
-          @media screen and (max-width: 500px) {
-            max-width: 80vw !important;
-          }
-        }
-      }
+
       &#block4 {
         .grid-menu__content {
           right: 0;
@@ -405,13 +432,11 @@ export default {
           transform: translate3d(-19vw, -20vw, 0);
         }
       }
-
       @media screen and (max-width: 500px) {
         &#block6,
         &#block4,
         &#block2 {
           transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1);
-
           .grid-menu__content {
             right: 0;
             left: initial;
@@ -427,7 +452,6 @@ export default {
           }
         }
       }
-
       &#block8 {
         .grid-menu__content {
           right: 0;
@@ -452,7 +476,6 @@ export default {
         max-height: 40vw !important;
         overflow: visible;
         transition-delay: 0s !important;
-
         background: hsl(228, 87%, 53%);
         @media screen and (max-width: 500px) {
           max-width: 80vw !important;
@@ -461,13 +484,11 @@ export default {
       }
     }
   }
-
   &__icon {
     display: flex;
     z-index: 4;
     position: relative;
   }
-
   &__heading {
     color: #fff;
     margin: 3.8vw 0 0 1.8vw;
