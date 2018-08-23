@@ -1,6 +1,7 @@
 <template>
 <div class="grid-menu__item" @click="expand">
-    <div class="grid-menu__icon" v-html="this.icon">
+    <div class="grid-menu__icon">
+      <img :src="this.icon" alt="">
     </div>
     <h4 class="grid-menu__heading">
         {{title}}
@@ -192,7 +193,13 @@ export default {
     margin-left: 1.8vw;
     margin-top: 3.2vw;
     img {
-      background: white;
+      width: 80px;
+      height: 80px;
+      background: hsla(0, 0%, 0%, 0);
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-23%, -51%);
     }
   }
   .grid-menu__item_expanded .grid-menu__icon {
