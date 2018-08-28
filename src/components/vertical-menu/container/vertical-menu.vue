@@ -39,7 +39,7 @@ export default {
   bottom: 0;
   font-family: "CourierNew", sans-serif;
   font-weight: 700;
-  margin-left: 10vw;
+  padding-left: 10vw;
   font-size: 1.625em;
   min-width: 20vw;
   line-height: 1;

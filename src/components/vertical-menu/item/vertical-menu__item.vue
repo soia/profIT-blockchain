@@ -277,10 +277,10 @@ export default {
         }
       }
       .vertical-menu__img {
-        top: -28vh;
+        top: -30vh;
         left: -10vw;
         width: 100vw;
-        height: 102vh;
+        height: 105vh;
         opacity: 0 !important;
         transition: 0s !important;
       }
@@ -292,7 +292,7 @@ export default {
         top: 0;
         transform: translate3d(0, 0, 0) !important;
         .project-desc {
-          transform: translate(10vw, -5vw);
+          transform: translate(7vw, -5vw);
           transition: 0.7s ease-in-out !important;
         }
         .vertical-menu__img {
