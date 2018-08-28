@@ -1,6 +1,6 @@
 <template>
     <section class="grid-menu">
-    <GridMenuItem :key="item.heading" :id="item.id" :icon="item.icon" :title="item.heading" :desc="item.desc" v-for="item in array"/>
+    <GridMenuItem :key="item.heading" :id="item.id" :icon="item.icon" :title="item.heading" :desc="item.desc" :partner="item.partner" v-for="item in array"/>
 </section>
 </template>
 

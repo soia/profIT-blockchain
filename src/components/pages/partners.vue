@@ -19,7 +19,7 @@ export default {
       array: [
         {
           id: "block1",
-          icon:
+          partner:
             '<svg pointer-events="none" height="80" width="80"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logoApple"></use></svg>'
         },
         {
@@ -27,7 +27,7 @@ export default {
         },
         {
           id: "block3",
-          icon:
+          partner:
             '<svg pointer-events="none" height="80" width="80"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logoAmazon"></use></svg>'
         },
         {
@@ -41,12 +41,12 @@ export default {
         },
         {
           id: "block7",
-          icon:
+          partner:
             '<svg pointer-events="none" height="80" width="80"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logoApple"></use></svg>'
         },
         {
           id: "block8",
-          icon:
+          partner:
             '<svg pointer-events="none" height="80" width="80"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logoAmazon"></use></svg>'
         }
       ]
@@ -62,9 +62,13 @@ export default {
     justify-content: center;
   }
   &__content,
-  &__heading,
   .circle-arrow {
     display: none;
+    
   }
+  &__heading{
+    margin:0;
+  }
+
 }
 </style>

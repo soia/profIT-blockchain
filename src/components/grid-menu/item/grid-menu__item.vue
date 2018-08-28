@@ -1,14 +1,18 @@
 <template>
 <div class="grid-menu__item" @click="expand">
-    <div class="grid-menu__icon">
-      <img :src="this.icon" alt="">
-    </div>
+
     <h4 class="grid-menu__heading">
+        <div class="grid-menu__icon" v-if="this.icon">
+            <img :src="this.icon" alt="">
+        </div>
+        <div class="grid-menu__icon" v-if="this.partner" v-html="this.partner">
+        </div>
         {{title}}
     </h4>
     <div class="circle-arrow" v-html="this.circleArrow"></div>
     <div class="grid-menu__content">
-        <span class="hidden hidden-text">		
+        <span class="hidden hidden-text">
+
           {{desc}}
         </span>
         <span class="grid-menu__text"></span>
@@ -22,7 +26,7 @@ import anime from "animejs";
 import Typed from "typed.js";
 
 export default {
-  props: ["title", "icon", "desc"],
+  props: ["title", "icon", "desc", "partner"],
   name: "GridMenuItem",
   mounted: function() {
     let $this = this,
@@ -160,6 +164,17 @@ export default {
 
 <style lang="scss">
 .technologies {
+  .grid-menu__item {
+    @media (min-width: 500px) {
+      &#block3.f-layer,
+      &#block7.f-layer {
+        .grid-menu__content {
+          left: initial;
+          right: 0 !important;
+        }
+      }
+    }
+  }
   .grid-menu__item_expanded {
     .grid-menu__content {
       max-width: 60vw !important;
@@ -167,16 +182,35 @@ export default {
         max-width: 80vw !important;
       }
     }
+    @media (min-width: 500px) {
+      &#block4,
+      &#block3 {
+        .grid-menu__heading {
+          transform: translate3d(-38.75vw, 0, 0);
+        }
+      }
+      &#block8,
+      &#block7 {
+        .grid-menu__heading {
+          transform: translate3d(-38vw, -20vw, 0);
+        }
+      }
+    }
   }
   .grid-menu__heading {
     margin-top: 3.2vw;
     font-size: 0.8em;
+    width: 70%;
+    line-height: 1.1;
+    @media (max-width: 500px) {
+      margin-top: 14vw;
+    }
   }
   .grid-menu__content {
     .closeIcon {
       right: initial;
       bottom: initial;
-      top: 8.5em;
+      top: 7em;
       left: 1.5em;
     }
   }
@@ -187,6 +221,12 @@ export default {
     width: 60%;
     font-size: 0.758em;
     word-break: initial;
+    @media (max-width: 500px) {
+      top: 30vw;
+      line-height: 1.2;
+      width: 75%;
+      padding-left: 0%;
+    }
   }
   .grid-menu__icon {
     transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1) 0.7s;
@@ -197,16 +237,19 @@ export default {
       height: 80px;
       background: hsla(0, 0%, 0%, 0);
       position: absolute;
-      top: 0;
-      left: 0;
+      top: -3vw;
+      left: -2vw;
       transform: translate(-23%, -51%);
+      @media (max-width: 500px) {
+        width: 55px;
+        height: 55px;
+        top: -7vw;
+        left: -1.6vw;
+      }
     }
   }
-  .grid-menu__item_expanded .grid-menu__icon {
-    transform: translate3d(1vw, 0, 0);
-    transition-delay: 0s;
-  }
 }
+
 .grid-menu__content {
   position: absolute;
   background: hsl(228, 87%, 53%);
@@ -221,12 +264,23 @@ export default {
   z-index: 1;
   @media screen and (max-width: 500px) {
     max-height: 40vw;
+    height: 122vw;
   }
   .closeIcon {
     position: absolute;
     bottom: 1.5em;
     right: 1.5em;
     transform: translate3d(0, 0, 0) rotate(-45deg);
+    @media screen and (max-width: 500px) {
+      bottom: initial;
+      right: initial;
+      top: 5em;
+      left: 1.5em;
+      #closeIcon {
+        width: 22px;
+        height: 22px;
+      }
+    }
     #closeIcon circle {
       stroke-dasharray: 126;
       stroke-dashoffset: 126;
@@ -258,7 +312,8 @@ export default {
     font-weight: 400;
     @media screen and (max-width: 500px) {
       top: 6em;
-      padding-left: 30%;
+      padding-left: 6%;
+      left: 10.8vw;
     }
   }
   &__item {
@@ -410,7 +465,6 @@ export default {
             translate(-18.5px, -18px) translate(9px, 12px);
         }
       }
-
       &#block4 {
         .grid-menu__content {
           right: 0;
@@ -426,7 +480,7 @@ export default {
         .grid-menu__heading {
           transform: translate3d(1vw, -20vw, 0);
           @media screen and (max-width: 500px) {
-            transform: translate3d(1vw, -38vw, 0);
+            transform: translate3d(1vw, -80vw, 0);
           }
         }
         .grid-menu__content {
@@ -455,7 +509,7 @@ export default {
         &#block6,
         &#block8 {
           .grid-menu__heading {
-            transform: translate3d(-38vw, -38vw, 0);
+            transform: translate3d(-38vw, -80vw, 0);
           }
         }
       }
@@ -486,7 +540,7 @@ export default {
         background: hsl(228, 87%, 53%);
         @media screen and (max-width: 500px) {
           max-width: 80vw !important;
-          max-height: 80vw !important;
+          max-height: 120vw !important;
         }
       }
     }

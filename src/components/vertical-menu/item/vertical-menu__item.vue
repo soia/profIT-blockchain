@@ -246,6 +246,66 @@ export default {
     }
   }
 }
+@media (max-width: 500px) {
+  .projects {
+    .vertical-menu {
+      overflow-x: hidden;
+    }
+    .vertical-menu__item {
+      .project-desc {
+        transform: translate(-100vw, 0);
+        &__text {
+          font-size: 13.2px;
+          color: #ffffff;
+          letter-spacing: 0;
+          line-height: 16.8px;
+          font-family: "CourierNew";
+          font-weight: 100;
+          font-style: italic;
+          width: 60vw;
+          position: absolute;
+          left: 0;
+          top: -30px;
+        }
+        &__link {
+          font-size: 12px;
+          color: #ffffff;
+          letter-spacing: 0;
+          line-height: 16.8px;
+          position: relative;
+          top: 20px;
+        }
+      }
+      .vertical-menu__img {
+        top: -28vh;
+        left: -10vw;
+        width: 100vw;
+        height: 102vh;
+        opacity: 0 !important;
+        transition: 0s !important;
+      }
+      &_expanded {
+        z-index: 999;
+        overflow: visible !important;
+
+        position: fixed !important;
+        top: 0;
+        transform: translate3d(0, 0, 0) !important;
+        .project-desc {
+          transform: translate(10vw, -5vw);
+          transition: 0.7s ease-in-out !important;
+        }
+        .vertical-menu__img {
+          transition: 0.7s ease-in-out !important;
+
+          opacity: 1 !important;
+          filter: brightness(0.6);
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 500px) {
   .projects {
     .vertical-menu__item {
@@ -271,7 +331,7 @@ export default {
 
 .Projects {
   .bg-lines {
-    height: 137vh;
+    height: 100vh;
   }
 }
 
@@ -288,6 +348,9 @@ export default {
     min-width: 42vw;
     font-size: 0.93em;
     top: 45%;
+    @media (max-width: 500px) {
+      top: 31%;
+    }
   }
   &__hidden-content {
     position: absolute;
