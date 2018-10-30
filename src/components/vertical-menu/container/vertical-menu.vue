@@ -48,6 +48,10 @@ export default {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  @media (min-width: 500px) {
+    padding-left: 0vw;
+    margin-left: 10vw;
+  }
 }
 @media (max-width: 500px) {
   .line-divide {
