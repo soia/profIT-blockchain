@@ -37,6 +37,7 @@
         {{this.projectDesc.desc}}
       </span>
         <a @click="(e) => e.stopPropagation()" :href="'https://'+ this.projectDesc.link" class="project-desc__link">  {{this.projectDesc.link}}</a>
+        <div class="closeIcon" v-html="this.closeIcon"></div>
     </div>
     <img class="vertical-menu__img" v-if="this.img" :src="this.img" alt="">
 </div>
@@ -152,9 +153,51 @@ export default {
       }
     }
   },
+  // data() {
+  //   return {
+  //     expanded: false
+  //   };
+  // },
+
   data() {
     return {
-      expanded: false
+      expanded: false,
+      circleArrow: `<div class="arrowIconHolder">
+                <svg id="circleArr" width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu" transform="translate(-369.000000, -461.000000)">
+                        <g  transform="translate(370.000000, 462.000000)">
+                            <g id="circleArr__arr" transform="translate(18.500000, 18.000000) rotate(-315.000000) translate(-18.500000, -18.000000) translate(9.000000, 12.000000)" fill="#000000">
+                                <polygon fill="currentColor"  id="Rectangle-6" points="13 0 19 6.0437128 13 12"></polygon>
+                                <rect fill="currentColor"  id="Rectangle-5" x="0" y="5" width="18" height="2"></rect>
+                            </g>
+                            <circle id="Oval-2" stroke="currentColor" stroke-width="2" cx="18" cy="18" r="18"></circle>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            </div>`,
+      closeIcon: `<div class="closeIconHolder">
+                <svg id="closeIcon" width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu" transform="translate(-369.000000, -461.000000)">
+                        <g  transform="translate(370.000000, 462.000000)">
+                            <g class="closeIconRect closeIconRect_l" transform="translate(18.500000, 18.000000) rotate(-315.000000) translate(-18.500000, -18.000000) translate(9.000000, 12.000000)" fill="#000000">
+                                <rect fill="currentColor"  id="Rectangle-5" x="0" y="5" width="18" height="2"></rect>
+                            </g>
+                            <g class="closeIconRect closeIconRect_r" transform="translate(18.500000, 18.000000) rotate(-315.000000) translate(-18.500000, -18.000000) translate(9.000000, 12.000000)" fill="#000000">
+                                <rect fill="currentColor"  id="Rectangle-123" x="0" y="5" width="18" height="2"></rect>
+                            </g>
+                            <circle id="Oval-2" stroke="currentColor" stroke-width="2" cx="18" cy="18" r="18"></circle>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            </div>`
     };
   }
 };
@@ -241,6 +284,52 @@ export default {
         }
         .vertical-menu__content {
           transform: rotate(-90deg) translate3d(0, -30vw, 0);
+        }
+        z-index: 999 !important;
+        #closeIcon circle {
+          stroke-dashoffset: 0 !important;
+          transition-delay: 0.8s !important;
+        }
+        .closeIconRect {
+          visibility: visible !important;
+          transition-delay: 1.2s !important;
+          &_l {
+            transform: translate(17.5px, 18px) rotate(-360deg)
+              translate(-18.5px, -18px) translate(9px, 12px);
+          }
+          &_r {
+            transform: translate(17.5px, 18px) rotate(-270deg)
+              translate(-18.5px, -18px) translate(9px, 12px);
+          }
+        }
+      }
+      .closeIcon {
+        position: absolute;
+        bottom: -0.5em;
+        right: -4.5em;
+        transform: translate3d(0, 0, 0) rotate(-45deg);
+        @media screen and (max-width: 500px) {
+          bottom: initial;
+          right: initial;
+          top: 5em;
+          left: 1.5em;
+          #closeIcon {
+            width: 22px;
+            height: 22px;
+          }
+        }
+        #closeIcon circle {
+          stroke-dasharray: 126;
+          stroke-dashoffset: 126;
+          transition: all.7s ease-in-out;
+        }
+        .closeIconRect {
+          position: absolute;
+          transition: all.6s ease-in-out;
+          visibility: hidden;
+          rect {
+            width: 19px;
+          }
         }
       }
     }

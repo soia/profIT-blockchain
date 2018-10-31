@@ -144,23 +144,6 @@
             <h3 class="menu__desc">
                 Что мы<br>предлaгаем
             </h3>
-            <div class="arrowIconHolder">
-                <svg id="circleArr" width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <desc>Created with Sketch.</desc>
-                <defs></defs>
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g id="menu" transform="translate(-369.000000, -461.000000)">
-                        <g  transform="translate(370.000000, 462.000000)">
-                            <g id="circleArr__arr" transform="translate(18.500000, 18.000000) rotate(-315.000000) translate(-18.500000, -18.000000) translate(9.000000, 12.000000)" fill="#000000">
-                                <polygon fill="currentColor"  id="Rectangle-6" points="13 0 19 6.0437128 13 12"></polygon>
-                                <rect fill="currentColor"  id="Rectangle-5" x="0" y="5" width="18" height="2"></rect>
-                            </g>
-                            <circle id="Oval-2" stroke="currentColor" stroke-width="2" cx="18" cy="18" r="18"></circle>
-                        </g>
-                    </g>
-                </g>
-            </svg>
-            </div>
         </router-link>
     </div>
 
@@ -377,7 +360,7 @@ export default {
     position: absolute;
     right: 1.5em;
     bottom: 1.5em;
-    transform: rotate(-135deg);
+    transform: rotate(-45deg);
     color: black;
     transition: color 0.5s ease-in-out 0.5s, transform 0.5s 0.5s;
     z-index: 99;
@@ -413,7 +396,7 @@ export default {
   &:hover {
     .arrowIconHolder {
       color: white;
-      transform: rotate(-90deg);
+      transform: rotate(0deg);
       #circleArr circle {
         stroke-dashoffset: 0 !important;
       }

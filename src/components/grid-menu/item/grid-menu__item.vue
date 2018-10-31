@@ -199,25 +199,27 @@ export default {
   }
   .grid-menu__heading {
     margin-top: 3.2vw;
-    font-size: 0.8em;
-    width: 70%;
+    font-size: 0.9em;
+    width: 85%;
     line-height: 1.1;
     @media (max-width: 500px) {
       margin-top: 14vw;
+      font-size: 0.6em;
+      width: 70%;
     }
   }
   .grid-menu__content {
     .closeIcon {
       right: initial;
       bottom: initial;
-      top: 7em;
+      top: 9em;
       left: 1.5em;
     }
   }
   .grid-menu__text {
     top: 10vw;
     line-height: 1.4;
-    left: 17.8vw;
+    left: 19.5vw;
     width: 60%;
     font-size: 0.758em;
     word-break: initial;
@@ -232,6 +234,7 @@ export default {
     transition: all 0.7s cubic-bezier(0.65, 0.05, 0.36, 1) 0.7s;
     margin-left: 1.8vw;
     margin-top: 3.2vw;
+    margin-bottom: 2.7vw;
     img {
       width: 80px;
       height: 80px;
@@ -329,7 +332,7 @@ export default {
     cursor: pointer;
     &:hover {
       .arrowIconHolder #circleArr {
-        transform: rotate(-45deg);
+        transform: rotate(0deg);
         transition-delay: 1s;
         #circleArr__arr {
           opacity: 1;
@@ -349,6 +352,7 @@ export default {
     .arrowIconHolder {
       #circleArr {
         transition: all.4s ease;
+        transform: rotate(-45deg);
         circle {
           transition: all.7s ease-in-out;
         }
